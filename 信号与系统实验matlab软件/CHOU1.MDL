@@ -1,0 +1,751 @@
+Model {
+  Name			  "chou1"
+  Version		  2.09
+  SimParamPage		  Solver
+  SampleTimeColors	  off
+  InvariantConstants	  off
+  WideVectorLines	  off
+  ShowLineWidths	  off
+  PaperOrientation	  landscape
+  PaperType		  usletter
+  PaperUnits		  inches
+  StartTime		  "0.0"
+  StopTime		  "9999"
+  Solver		  ode45
+  RelTol		  "1e-5"
+  AbsTol		  "1e-5"
+  Refine		  "1"
+  MaxStep		  "0.001"
+  InitialStep		  "auto"
+  FixedStep		  "auto"
+  MaxOrder		  5
+  OutputOption		  RefineOutputTimes
+  OutputTimes		  "[]"
+  LoadExternalInput	  off
+  ExternalInput		  "[t, u]"
+  SaveTime		  off
+  TimeSaveName		  "tout"
+  SaveState		  off
+  StateSaveName		  "xout"
+  SaveOutput		  off
+  OutputSaveName	  "yout"
+  LoadInitialState	  off
+  InitialState		  "xInitial"
+  SaveFinalState	  off
+  FinalStateName	  "xFinal"
+  LimitMaxRows		  off
+  MaxRows		  "1000"
+  Decimation		  "1"
+  AlgebraicLoopMsg	  warning
+  MinStepSizeMsg	  warning
+  UnconnectedInputMsg	  warning
+  UnconnectedOutputMsg	  warning
+  UnconnectedLineMsg	  warning
+  ConsistencyChecking	  off
+  ZeroCross		  on
+  SimulationMode	  normal
+  RTWSystemTargetFile	  "grt.tlc"
+  RTWInlineParameters	  off
+  RTWRetainRTWFile	  off
+  RTWTemplateMakefile	  "grt_vc.tmf"
+  RTWMakeCommand	  "make_rtw"
+  RTWGenerateCodeOnly	  off
+  ExtModeMexFile	  "ext_comm"
+  ExtModeBatchMode	  off
+  BlockDefaults {
+    Orientation		    right
+    ForegroundColor	    black
+    BackgroundColor	    white
+    DropShadow		    off
+    NamePlacement	    normal
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    normal
+    FontAngle		    normal
+    ShowName		    on
+  }
+  AnnotationDefaults {
+    HorizontalAlignment	    center
+    VerticalAlignment	    middle
+    ForegroundColor	    black
+    BackgroundColor	    white
+    DropShadow		    off
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    normal
+    FontAngle		    normal
+  }
+  LineDefaults {
+    FontName		    "Helvetica"
+    FontSize		    9
+    FontWeight		    normal
+    FontAngle		    normal
+  }
+  System {
+    Name		    "chou1"
+    Location		    [12, 44, 606, 413]
+    Open		    on
+    ScreenColor		    white
+    Block {
+      BlockType		      ZeroPole
+      Name		      "巴特沃斯\n低通滤波器1"
+      Position		      [170, 93, 230, 137]
+      FontName		      "宋体"
+      FontSize		      12
+      Zeros		      "z"
+      Poles		      "p"
+      Gain		      "k"
+      MaskType		      "buttap"
+      MaskDescription	      "Analog Butterworth low pass filter.\n\n(Requires"
+			      " Signal Processing Toolbox)"
+      MaskHelp		      "Butterworth low pass filter using MATLAB's "
+			      "butter command."
+      MaskPromptString	      "Cutoff frequency (rad/sec)|Order"
+      MaskStyleString	      "edit,edit"
+      MaskInitialization      "[z,p,k]=buttap(@2); z=@1*z; p=@1*p; k=real(prod("
+			      "-p)); [num,den]=zp2tf(z,p,k); w=logspace(log10(@"
+			      "1/10),log10(10*@1),20); h=freqs(num,den,w); "
+      MaskDisplay	      "plot(20*log10(w),20*log10(abs(h)))"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      none
+      MaskIconUnits	      autoscale
+      MaskValueString	      "60|4"
+    }
+    Block {
+      BlockType		      ZeroPole
+      Name		      "巴特沃斯\n低通滤波器2"
+      Position		      [405, 168, 465, 212]
+      FontName		      "宋体"
+      FontSize		      12
+      Zeros		      "z"
+      Poles		      "p"
+      Gain		      "k"
+      MaskType		      "buttap"
+      MaskDescription	      "Analog Butterworth low pass filter.\n\n(Requires"
+			      " Signal Processing Toolbox)"
+      MaskHelp		      "Butterworth low pass filter using MATLAB's "
+			      "butter command."
+      MaskPromptString	      "Cutoff frequency (rad/sec)|Order"
+      MaskStyleString	      "edit,edit"
+      MaskInitialization      "[z,p,k]=buttap(@2); z=@1*z; p=@1*p; k=real(prod("
+			      "-p)); [num,den]=zp2tf(z,p,k); w=logspace(log10(@"
+			      "1/10),log10(10*@1),20); h=freqs(num,den,w); "
+      MaskDisplay	      "plot(20*log10(w),20*log10(abs(h)))"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      none
+      MaskIconUnits	      autoscale
+      MaskValueString	      "60|4"
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "乘法器"
+      Ports		      [2, 1, 0, 0, 0]
+      Position		      [315, 179, 335, 201]
+      FontName		      "Arial"
+      FontSize		      12
+      ShowPortLabels	      off
+      MaskType		      "Dot Product"
+      MaskDescription	      "Inner (dot) product.\ny=sum(u1.*u2)"
+      MaskHelp		      "Computes the inner (dot) product of the inputs: "
+			      "sum(u1.*u2).  The inputs are vectors of the "
+			      "same length. Output is a scalar."
+      MaskDisplay	      "disp('X')"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      none
+      MaskIconUnits	      autoscale
+      System {
+	Name			"乘法器"
+	Location		[33, 479, 253, 634]
+	Open			off
+	ScreenColor		white
+	Block {
+	  BlockType		  Inport
+	  Name			  "in_1"
+	  Position		  [15, 25, 35, 45]
+	  Port			  "1"
+	  PortWidth		  "-1"
+	  SampleTime		  "-1"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "in_2"
+	  Position		  [15, 90, 35, 110]
+	  Port			  "2"
+	  PortWidth		  "-1"
+	  SampleTime		  "-1"
+	}
+	Block {
+	  BlockType		  Product
+	  Name			  "Product"
+	  Ports			  [2, 1, 0, 0, 0]
+	  Position		  [65, 55, 90, 75]
+	  Inputs		  "2"
+	}
+	Block {
+	  BlockType		  Sum
+	  Name			  "Sum"
+	  Ports			  [1, 1, 0, 0, 0]
+	  Position		  [125, 55, 145, 75]
+	  Inputs		  "+"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "out_1"
+	  Position		  [185, 55, 205, 75]
+	  Port			  "1"
+	  OutputWhenDisabled	  held
+	  InitialOutput		  "0"
+	}
+	Line {
+	  SrcBlock		  "Sum"
+	  SrcPort		  1
+	  DstBlock		  "out_1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Product"
+	  SrcPort		  1
+	  DstBlock		  "Sum"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "in_1"
+	  SrcPort		  1
+	  DstBlock		  "Product"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "in_2"
+	  SrcPort		  1
+	  DstBlock		  "Product"
+	  DstPort		  2
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "抽样脉冲"
+      Ports		      [0, 1, 0, 0, 0]
+      Position		      [55, 227, 90, 263]
+      FontName		      "宋体"
+      FontSize		      12
+      ShowPortLabels	      off
+      MaskType		      "Pulse Generator"
+      MaskDescription	      "Pulse Generator."
+      MaskHelp		      "Pulse generator which ensures pulse\\ntransition"
+			      "s are hit. Provides a vector of pulses when "
+			      "the height is entered as a vector.\\nUnmask "
+			      "to see how it works."
+      MaskPromptString	      "Pulse period (secs):|Pulse width:|Pulse height:|"
+			      "Pulse start time:"
+      MaskStyleString	      "edit,edit,edit,edit"
+      MaskInitialization      "Ts=@1; du=@2; ht=@3; stt=@4; ini=ones(length(ht)"
+			      ",1); st1=rem(stt,Ts); st2=rem(stt+du,Ts);if(Ts<="
+			      "1.2*du),ini=zeros(length(ht),1);end;"
+      MaskDisplay	      "plot(0,0,100,100,[90,75,75,60,60,35,35,20,20,10]"
+			      ",[20,20,80,80,20,20,80,80,20,20])"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      none
+      MaskIconUnits	      autoscale
+      MaskValueString	      "pi/100|0.001|1|0.5"
+      System {
+	Name			"抽样脉冲"
+	Location		[158, 441, 759, 682]
+	Open			off
+	ScreenColor		white
+	Block {
+	  BlockType		  Clock
+	  Name			  "Clock1"
+	  Position		  [295, 100, 315, 120]
+	  ShowName		  off
+	  Location		  [30, 40, 140, 75]
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "Constant"
+	  Position		  [25, 30, 45, 50]
+	  Value			  "1"
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "Constant1"
+	  Position		  [295, 149, 320, 171]
+	  Value			  "stt"
+	}
+	Block {
+	  BlockType		  Gain
+	  Name			  "Gain"
+	  Position		  [510, 102, 535, 128]
+	  ShowName		  off
+	  Gain			  "ht"
+	}
+	Block {
+	  BlockType		  Logic
+	  Name			  "Logical\nOperator"
+	  Ports			  [2, 1, 0, 0, 0]
+	  Position		  [285, 38, 315, 62]
+	  Operator		  XOR
+	  Inputs		  "2"
+	}
+	Block {
+	  BlockType		  Logic
+	  Name			  "Logical\nOperator1"
+	  Ports			  [1, 1, 0, 0, 0]
+	  Position		  [355, 38, 385, 62]
+	  Operator		  NOT
+	  Inputs		  "1"
+	}
+	Block {
+	  BlockType		  Product
+	  Name			  "Product"
+	  Ports			  [2, 1, 0, 0, 0]
+	  Position		  [455, 105, 480, 125]
+	  ShowName		  off
+	  Inputs		  "2"
+	}
+	Block {
+	  BlockType		  RelationalOperator
+	  Name			  "Relational\noperator"
+	  Position		  [370, 102, 400, 133]
+	  ShowName		  off
+	  Operator		  >=
+	}
+	Block {
+	  BlockType		  Sum
+	  Name			  "Sum"
+	  Ports			  [2, 1, 0, 0, 0]
+	  Position		  [135, 35, 155, 55]
+	  ShowName		  off
+	  Inputs		  "+-"
+	}
+	Block {
+	  BlockType		  Sum
+	  Name			  "Sum1"
+	  Ports			  [2, 1, 0, 0, 0]
+	  Position		  [130, 120, 150, 140]
+	  ShowName		  off
+	  Inputs		  "+-"
+	}
+	Block {
+	  BlockType		  UnitDelay
+	  Name			  "Unit Delay"
+	  Position		  [145, 75, 195, 95]
+	  Orientation		  left
+	  X0			  "0"
+	  SampleTime		  "[Ts,st1]"
+	}
+	Block {
+	  BlockType		  UnitDelay
+	  Name			  "Unit Delay1"
+	  Position		  [140, 165, 190, 185]
+	  Orientation		  left
+	  X0			  "ini"
+	  SampleTime		  "[Ts,st2]"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "out_1"
+	  Position		  [560, 105, 580, 125]
+	  ShowName		  off
+	  Port			  "1"
+	  OutputWhenDisabled	  held
+	  InitialOutput		  "0"
+	}
+	Line {
+	  SrcBlock		  "Sum1"
+	  SrcPort		  1
+	  Points		  [0, 0]
+	  Branch {
+	    Points		    [90, 0; 0, -75]
+	    DstBlock		    "Logical\nOperator"
+	    DstPort		    2
+	  }
+	  Branch {
+	    Points		    [55, 0; 0, 45]
+	    DstBlock		    "Unit Delay1"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "Sum"
+	  SrcPort		  1
+	  Points		  [0, 0]
+	  Branch {
+	    DstBlock		    "Logical\nOperator"
+	    DstPort		    1
+	  }
+	  Branch {
+	    Points		    [70, 0; 0, 40]
+	    DstBlock		    "Unit Delay"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "Constant"
+	  SrcPort		  1
+	  Points		  [0, 0]
+	  Branch {
+	    Points		    [20, 0; 0, 85]
+	    DstBlock		    "Sum1"
+	    DstPort		    1
+	  }
+	  Branch {
+	    DstBlock		    "Sum"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "Unit Delay1"
+	  SrcPort		  1
+	  Points		  [-35, 0; 0, -40]
+	  DstBlock		  "Sum1"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Unit Delay"
+	  SrcPort		  1
+	  Points		  [-35, 0; 0, -35]
+	  DstBlock		  "Sum"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Clock1"
+	  SrcPort		  1
+	  DstBlock		  "Relational\noperator"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Relational\noperator"
+	  SrcPort		  1
+	  DstBlock		  "Product"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Product"
+	  SrcPort		  1
+	  DstBlock		  "Gain"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Gain"
+	  SrcPort		  1
+	  DstBlock		  "out_1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Constant1"
+	  SrcPort		  1
+	  Points		  [20, 0; 0, -35]
+	  DstBlock		  "Relational\noperator"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Logical\nOperator"
+	  SrcPort		  1
+	  DstBlock		  "Logical\nOperator1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Logical\nOperator1"
+	  SrcPort		  1
+	  Points		  [40, 0; 0, 60]
+	  DstBlock		  "Product"
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      Scope
+      Name		      "抽样信号"
+      Ports		      [1, 0, 0, 0, 0]
+      Position		      [420, 250, 450, 280]
+      FontName		      "宋体"
+      FontSize		      12
+      Floating		      off
+      Location		      [143, 245, 509, 406]
+      Open		      off
+      Grid		      on
+      TickLabels	      on
+      ZoomMode		      on
+      TimeRange		      "5"
+      YMin		      "-2.6048"
+      YMax		      "2.6048"
+      SaveToWorkspace	      off
+      SaveName		      "ScopeData"
+      LimitMaxRows	      on
+      MaxRows		      "5000"
+      Decimation	      "1"
+      SampleInput	      off
+      SampleTime	      "0"
+    }
+    Block {
+      BlockType		      ToWorkspace
+      Name		      "环境变量1"
+      Position		      [510, 32, 560, 48]
+      FontName		      "宋体"
+      FontSize		      12
+      VariableName	      "z1"
+      Buffer		      "1024*2"
+      Decimation	      "1"
+      SampleTime	      "0"
+    }
+    Block {
+      BlockType		      ToWorkspace
+      Name		      "环境变量3"
+      Position		      [510, 67, 560, 83]
+      FontName		      "宋体"
+      FontSize		      12
+      VariableName	      "z2"
+      Buffer		      "1024*2"
+      Decimation	      "1"
+      SampleTime	      "0"
+    }
+    Block {
+      BlockType		      ToWorkspace
+      Name		      "环境变量4"
+      Position		      [510, 102, 560, 118]
+      FontName		      "宋体"
+      FontSize		      12
+      VariableName	      "z3"
+      Buffer		      "1024*2"
+      Decimation	      "1"
+      SampleTime	      "0"
+    }
+    Block {
+      BlockType		      ToWorkspace
+      Name		      "环境变量5"
+      Position		      [510, 137, 560, 153]
+      FontName		      "宋体"
+      FontSize		      12
+      VariableName	      "z4"
+      Buffer		      "1024*2"
+      Decimation	      "1"
+      SampleTime	      "0"
+    }
+    Block {
+      BlockType		      Scope
+      Name		      "恢复信号"
+      Ports		      [1, 0, 0, 0, 0]
+      Position		      [520, 175, 550, 205]
+      FontName		      "宋体"
+      FontSize		      12
+      Floating		      off
+      Location		      [193, 276, 524, 435]
+      Open		      off
+      Grid		      on
+      TickLabels	      on
+      ZoomMode		      on
+      TimeRange		      "5"
+      YMin		      "-0.108928"
+      YMax		      "0.108928"
+      SaveToWorkspace	      off
+      SaveName		      "ScopeData"
+      LimitMaxRows	      on
+      MaxRows		      "5000"
+      Decimation	      "1"
+      SampleInput	      off
+      SampleTime	      "0"
+    }
+    Block {
+      BlockType		      Scope
+      Name		      "滤波后信号"
+      Ports		      [1, 0, 0, 0, 0]
+      Position		      [310, 100, 340, 130]
+      FontName		      "宋体"
+      FontSize		      12
+      Floating		      off
+      Location		      [95, 217, 427, 364]
+      Open		      off
+      Grid		      on
+      TickLabels	      on
+      ZoomMode		      on
+      TimeRange		      "5"
+      YMin		      "-2.58112"
+      YMax		      "2.58112"
+      SaveToWorkspace	      off
+      SaveName		      "ScopeData"
+      LimitMaxRows	      on
+      MaxRows		      "5000"
+      Decimation	      "1"
+      SampleInput	      off
+      SampleTime	      "0"
+    }
+    Block {
+      BlockType		      Scope
+      Name		      "脉冲信号"
+      Ports		      [1, 0, 0, 0, 0]
+      Position		      [185, 260, 215, 290]
+      FontName		      "宋体"
+      FontSize		      12
+      Floating		      off
+      Location		      [50, 190, 381, 340]
+      Open		      off
+      Grid		      on
+      TickLabels	      on
+      ZoomMode		      on
+      TimeRange		      "1"
+      YMin		      "-1.55104"
+      YMax		      "1.55104"
+      SaveToWorkspace	      off
+      SaveName		      "ScopeData"
+      LimitMaxRows	      on
+      MaxRows		      "5000"
+      Decimation	      "1"
+      SampleInput	      off
+      SampleTime	      "0"
+    }
+    Block {
+      BlockType		      ToWorkspace
+      Name		      "时间变量"
+      Position		      [485, 316, 540, 334]
+      VariableName	      "t"
+      Buffer		      "2048"
+      Decimation	      "1"
+      SampleTime	      "0"
+    }
+    Block {
+      BlockType		      Clock
+      Name		      "时钟"
+      Position		      [325, 315, 345, 335]
+      Location		      [12, 31, 119, 76]
+    }
+    Block {
+      BlockType		      SignalGenerator
+      Name		      "信号源"
+      Position		      [50, 98, 95, 132]
+      FontName		      "宋体"
+      FontSize		      12
+      WaveForm		      sine
+      Amplitude		      "2.000000"
+      Frequency		      "3.140000"
+      Units		      rad/sec
+    }
+    Block {
+      BlockType		      Scope
+      Name		      "原始信号"
+      Ports		      [1, 0, 0, 0, 0]
+      Position		      [185, 175, 215, 205]
+      FontName		      "宋体"
+      FontSize		      12
+      Floating		      off
+      Location		      [6, 162, 337, 318]
+      Open		      off
+      Grid		      on
+      TickLabels	      on
+      ZoomMode		      on
+      TimeRange		      "5"
+      YMin		      "-4"
+      YMax		      "4"
+      SaveToWorkspace	      off
+      SaveName		      "ScopeData"
+      LimitMaxRows	      on
+      MaxRows		      "5000"
+      Decimation	      "1"
+      SampleInput	      off
+      SampleTime	      "0"
+    }
+    Line {
+      SrcBlock		      "时钟"
+      SrcPort		      1
+      DstBlock		      "时间变量"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "巴特沃斯\n低通滤波器2"
+      SrcPort		      1
+      Points		      [20, 0]
+      Branch {
+	Points			[0, -45]
+	DstBlock		"环境变量5"
+	DstPort			1
+      }
+      Branch {
+	DstBlock		"恢复信号"
+	DstPort			1
+      }
+    }
+    Line {
+      SrcBlock		      "抽样脉冲"
+      SrcPort		      1
+      Points		      [40, 0]
+      Branch {
+	Points			[0, 30]
+	DstBlock		"脉冲信号"
+	DstPort			1
+      }
+      Branch {
+	Points			[135, 0; 0, -50]
+	DstBlock		"乘法器"
+	DstPort			2
+      }
+    }
+    Line {
+      SrcBlock		      "乘法器"
+      SrcPort		      1
+      Points		      [30, 0]
+      Branch {
+	Points			[0, -80]
+	DstBlock		"环境变量4"
+	DstPort			1
+      }
+      Branch {
+	Points			[0, 75]
+	DstBlock		"抽样信号"
+	DstPort			1
+      }
+      Branch {
+	DstBlock		"巴特沃斯\n低通滤波器2"
+	DstPort			1
+      }
+    }
+    Line {
+      SrcBlock		      "巴特沃斯\n低通滤波器1"
+      SrcPort		      1
+      Points		      [35, 0]
+      Branch {
+	Points			[0, -40]
+	DstBlock		"环境变量3"
+	DstPort			1
+      }
+      Branch {
+	DstBlock		"滤波后信号"
+	DstPort			1
+      }
+      Branch {
+	Points			[0, 70]
+	DstBlock		"乘法器"
+	DstPort			1
+      }
+    }
+    Line {
+      SrcBlock		      "信号源"
+      SrcPort		      1
+      Points		      [15, 0]
+      Branch {
+	Points			[0, -75]
+	DstBlock		"环境变量1"
+	DstPort			1
+      }
+      Branch {
+	Points			[0, 75]
+	DstBlock		"原始信号"
+	DstPort			1
+      }
+      Branch {
+	DstBlock		"巴特沃斯\n低通滤波器1"
+	DstPort			1
+      }
+    }
+    Annotation {
+      Position		      [112, 17]
+      VerticalAlignment	      top
+      FontName		      "楷体_GB2312"
+      FontSize		      15
+      Text		      "连续时间抽样实验"
+    }
+  }
+}

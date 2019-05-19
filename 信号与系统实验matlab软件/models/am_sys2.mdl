@@ -1,0 +1,788 @@
+Model {
+  Name			  "am_sys2"
+  Version		  3.00
+  SimParamPage		  "Solver"
+  SampleTimeColors	  off
+  InvariantConstants	  off
+  WideVectorLines	  off
+  ShowLineWidths	  off
+  ShowPortDataTypes	  off
+  StartTime		  "0.0"
+  StopTime		  "999999"
+  SolverMode		  "Auto"
+  Solver		  "ode45"
+  RelTol		  "1e-3"
+  AbsTol		  "1e-3"
+  Refine		  "1"
+  MaxStep		  "0.001"
+  InitialStep		  "auto"
+  FixedStep		  "auto"
+  MaxOrder		  5
+  OutputOption		  "RefineOutputTimes"
+  OutputTimes		  "[]"
+  LoadExternalInput	  off
+  ExternalInput		  "[t, u]"
+  SaveTime		  off
+  TimeSaveName		  "tout"
+  SaveState		  off
+  StateSaveName		  "xout"
+  SaveOutput		  off
+  OutputSaveName	  "yout"
+  LoadInitialState	  off
+  InitialState		  "xInitial"
+  SaveFinalState	  off
+  FinalStateName	  "xFinal"
+  SaveFormat		  "Matrix"
+  LimitMaxRows		  off
+  MaxRows		  "1000"
+  Decimation		  "1"
+  AlgebraicLoopMsg	  "warning"
+  MinStepSizeMsg	  "warning"
+  UnconnectedInputMsg	  "warning"
+  UnconnectedOutputMsg	  "warning"
+  UnconnectedLineMsg	  "warning"
+  InheritedTsInSrcMsg	  "warning"
+  IntegerOverflowMsg	  "warning"
+  UnnecessaryDatatypeConvMsg "none"
+  Int32ToFloatConvMsg	  "warning"
+  SignalLabelMismatchMsg  "none"
+  ConsistencyChecking	  "off"
+  ZeroCross		  on
+  SimulationMode	  "normal"
+  BlockDataTips		  on
+  BlockParametersDataTip  on
+  BlockAttributesDataTip  off
+  BlockPortWidthsDataTip  off
+  BlockDescriptionStringDataTip	off
+  BlockMaskParametersDataTip off
+  ToolBar		  on
+  StatusBar		  on
+  BrowserShowLibraryLinks off
+  BrowserLookUnderMasks	  off
+  OptimizeBlockIOStorage  on
+  BufferReuse		  on
+  BooleanDataType	  off
+  RTWSystemTargetFile	  "grt.tlc"
+  RTWInlineParameters	  off
+  RTWRetainRTWFile	  off
+  RTWTemplateMakefile	  "grt_default_tmf"
+  RTWMakeCommand	  "make_rtw"
+  RTWGenerateCodeOnly	  off
+  ExtModeMexFile	  "ext_comm"
+  ExtModeBatchMode	  off
+  ExtModeTrigType	  "manual"
+  ExtModeTrigMode	  "oneshot"
+  ExtModeTrigPort	  "1"
+  ExtModeTrigElement	  "any"
+  ExtModeTrigDuration	  1000
+  ExtModeTrigHoldOff	  0
+  ExtModeTrigDelay	  0
+  ExtModeTrigDirection	  "rising"
+  ExtModeTrigLevel	  0
+  ExtModeArchiveMode	  "off"
+  ExtModeAutoIncOneShot	  off
+  ExtModeIncDirWhenArm	  off
+  ExtModeAddSuffixToVar	  off
+  ExtModeWriteAllDataToWs off
+  ExtModeArmWhenConnect	  off
+  Created		  "Wed Jan 05 22:18:07 2000"
+  UpdateHistory		  "UpdateHistoryNever"
+  ModifiedByFormat	  "%<Auto>"
+  ModifiedDateFormat	  "%<Auto>"
+  LastModifiedDate	  "Wed Jan 05 22:25:36 2000"
+  ModelVersionFormat	  "1.%<AutoIncrement:1>"
+  ConfigurationManager	  "none"
+  BlockDefaults {
+    Orientation		    "right"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    NamePlacement	    "normal"
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+    ShowName		    on
+  }
+  AnnotationDefaults {
+    HorizontalAlignment	    "center"
+    VerticalAlignment	    "middle"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+  }
+  LineDefaults {
+    FontName		    "Helvetica"
+    FontSize		    9
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+  }
+  System {
+    Name		    "am_sys2"
+    Location		    [6, 84, 628, 508]
+    Open		    on
+    ModelBrowserVisibility  off
+    ModelBrowserWidth	    200
+    ScreenColor		    "automatic"
+    PaperOrientation	    "landscape"
+    PaperPositionMode	    "auto"
+    PaperType		    "usletter"
+    PaperUnits		    "inches"
+    ZoomFactor		    "100"
+    AutoZoom		    on
+    ReportName		    "simulink-default.rpt"
+    Block {
+      BlockType		      StateSpace
+      Name		      "Butterworth\nBP 滤波器"
+      Position		      [110, 194, 170, 236]
+      ForegroundColor	      "yellow"
+      FontName		      "宋体"
+      FontSize		      12
+      A			      "at"
+      B			      "bt"
+      C			      "ct"
+      D			      "dt"
+      X0		      "0"
+      MaskType		      "buttap,lp2bp"
+      MaskDescription	      "Analog Butterworth band pass filter.\n\n(Requir"
+"es Signal Processing Toolbox)"
+      MaskHelp		      "Butterworth band pass filter using MATLAB's but"
+"ter and lp2bp command."
+      MaskPromptString	      "Center frequency (rad/sec)|Bandwidth (rad/sec):"
+"|Order"
+      MaskStyleString	      "edit,edit,edit"
+      MaskTunableValueString  "on,on,on"
+      MaskCallbackString      "||"
+      MaskEnableString	      "on,on,on"
+      MaskVisibilityString    "on,on,on"
+      MaskInitialization      "[at,bt,ct,dt,w,mag]=filtm('buttap','lp2bp',@1,@"
+"2,50,@3);"
+      MaskDisplay	      "plot(w,mag)"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "200|10|4"
+    }
+    Block {
+      BlockType		      StateSpace
+      Name		      "Butterworth\nBP 滤波器1"
+      Position		      [345, 194, 405, 236]
+      ForegroundColor	      "yellow"
+      FontName		      "宋体"
+      FontSize		      12
+      A			      "at"
+      B			      "bt"
+      C			      "ct"
+      D			      "dt"
+      X0		      "0"
+      MaskType		      "buttap,lp2bp"
+      MaskDescription	      "Analog Butterworth band pass filter.\n\n(Requir"
+"es Signal Processing Toolbox)"
+      MaskHelp		      "Butterworth band pass filter using MATLAB's but"
+"ter and lp2bp command."
+      MaskPromptString	      "Center frequency (rad/sec)|Bandwidth (rad/sec):"
+"|Order"
+      MaskStyleString	      "edit,edit,edit"
+      MaskTunableValueString  "on,on,on"
+      MaskCallbackString      "||"
+      MaskEnableString	      "on,on,on"
+      MaskVisibilityString    "on,on,on"
+      MaskInitialization      "[at,bt,ct,dt,w,mag]=filtm('buttap','lp2bp',@1,@"
+"2,50,@3);"
+      MaskDisplay	      "plot(w,mag)"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "100|10|4"
+    }
+    Block {
+      BlockType		      ZeroPole
+      Name		      "Butterworth\nLP 滤波器"
+      Position		      [385, 323, 445, 367]
+      FontName		      "宋体"
+      FontSize		      12
+      Zeros		      "z"
+      Poles		      "p"
+      Gain		      "k"
+      MaskType		      "buttap"
+      MaskDescription	      "Analog Butterworth low pass filter.\n\n(Require"
+"s Signal Processing Toolbox)"
+      MaskHelp		      "Butterworth low pass filter using MATLAB's butt"
+"er command."
+      MaskPromptString	      "Cutoff frequency (rad/sec)|Order"
+      MaskStyleString	      "edit,edit"
+      MaskTunableValueString  "on,on"
+      MaskCallbackString      "|"
+      MaskEnableString	      "on,on"
+      MaskVisibilityString    "on,on"
+      MaskInitialization      "[z,p,k]=buttap(@2); z=@1*z; p=@1*p; k=real(prod"
+"(-p)); [num,den]=zp2tf(z,p,k); w=logspace(log10(@1/10),log10(10*@1),20); h=fr"
+"eqs(num,den,w); "
+      MaskDisplay	      "plot(20*log10(w),20*log10(abs(h)))"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "10|4"
+    }
+    Block {
+      BlockType		      Product
+      Name		      "乘法器"
+      Ports		      [2, 1, 0, 0, 0]
+      Position		      [215, 74, 245, 96]
+      FontName		      "宋体"
+      FontSize		      12
+      Inputs		      "2"
+      SaturateOnIntegerOverflow	on
+      MaskType		      "乘法器"
+      MaskDescription	      "乘法器"
+      MaskDisplay	      "plot([0 1],[1 0],[0 1],[0 1]);"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+    }
+    Block {
+      BlockType		      Product
+      Name		      "乘法器2"
+      Ports		      [2, 1, 0, 0, 0]
+      Position		      [250, 334, 280, 356]
+      FontName		      "宋体"
+      FontSize		      12
+      Inputs		      "2"
+      SaturateOnIntegerOverflow	on
+      MaskType		      "乘法器"
+      MaskDescription	      "乘法器"
+      MaskDisplay	      "plot([0 1],[1 0],[0 1],[0 1]);"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+    }
+    Block {
+      BlockType		      TransportDelay
+      Name		      "传输延迟"
+      Position		      [135, 335, 175, 365]
+      FontName		      "宋体"
+      FontSize		      12
+      DelayTime		      "0.09"
+      InitialInput	      "0"
+      BufferSize	      "1024"
+    }
+    Block {
+      BlockType		      Scope
+      Name		      "调制后信号波形"
+      Ports		      [1, 0, 0, 0, 0]
+      Position		      [520, 70, 550, 100]
+      FontName		      "宋体"
+      FontSize		      12
+      Floating		      off
+      Location		      [189, 33, 520, 177]
+      Open		      off
+      NumInputPorts	      "1"
+      TickLabels	      "OneTimeTick"
+      ZoomMode		      "on"
+      List {
+	ListType		AxesTitles
+	axes1			"%<SignalLabel>"
+      }
+      Grid		      "on"
+      TimeRange		      "1.000000"
+      YMin		      "-2"
+      YMax		      "2"
+      SaveToWorkspace	      off
+      SaveName		      "ScopeData"
+      DataFormat	      "Matrix"
+      LimitMaxRows	      on
+      MaxRows		      "5000"
+      Decimation	      "1"
+      SampleInput	      off
+      SampleTime	      "0"
+    }
+    Block {
+      BlockType		      MATLABFcn
+      Name		      "二分频"
+      Position		      [245, 196, 315, 234]
+      ForegroundColor	      "yellow"
+      FontName		      "宋体"
+      FontSize		      12
+      MATLABFcn		      "df2"
+      OutputWidth	      "-1"
+      OutputSignalType	      "auto"
+      MaskType		      "分频器"
+      MaskDescription	      "二分频器"
+      MaskDisplay	      "disp('Frequency\\n—————\\n2')"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+    }
+    Block {
+      BlockType		      Scope
+      Name		      "解调后信号波形"
+      Ports		      [1, 0, 0, 0, 0]
+      Position		      [520, 330, 550, 360]
+      FontName		      "宋体"
+      FontSize		      12
+      Floating		      off
+      Location		      [309, 325, 640, 480]
+      Open		      off
+      NumInputPorts	      "1"
+      TickLabels	      "OneTimeTick"
+      ZoomMode		      "on"
+      List {
+	ListType		AxesTitles
+	axes1			"%<SignalLabel>"
+      }
+      Grid		      "on"
+      TimeRange		      "1.000000"
+      YMin		      "-3"
+      YMax		      "3"
+      SaveToWorkspace	      off
+      SaveName		      "ScopeData"
+      DataFormat	      "Matrix"
+      LimitMaxRows	      on
+      MaxRows		      "5000"
+      Decimation	      "1"
+      SampleInput	      off
+      SampleTime	      "0"
+    }
+    Block {
+      BlockType		      Product
+      Name		      "平方运算"
+      Ports		      [2, 1, 0, 0, 0]
+      Position		      [45, 204, 75, 226]
+      ForegroundColor	      "yellow"
+      FontName		      "宋体"
+      FontSize		      12
+      Inputs		      "2"
+      SaturateOnIntegerOverflow	on
+      MaskType		      "乘法器"
+      MaskDescription	      "乘法器"
+      MaskDisplay	      "plot([0 1],[1 0],[0 1],[0 1]);"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "谱分析"
+      Ports		      [2, 0, 0, 0, 0]
+      Position		      [520, 120, 550, 160]
+      DropShadow	      on
+      FontName		      "宋体"
+      FontSize		      12
+      ShowPortLabels	      off
+      MaskType		      "Spectrum analyzer."
+      MaskDescription	      "Spectrum analyser using graph window.\nHook inp"
+"ut 1 to system input.\nHook input 2 to system output."
+      MaskHelp		      "Hook the system's input to the first port of th"
+"is block and the system's output to second port. Results are displayed as the"
+" frequency response of this system. Use signals with high harmonic content fo"
+"r best results. "
+      MaskPromptString	      "Length of buffer:|Number of points for fft:|Plo"
+"t after how many points:|Sample time:"
+      MaskStyleString	      "edit,edit,edit,edit"
+      MaskTunableValueString  "on,on,on,on"
+      MaskCallbackString      "|||"
+      MaskEnableString	      "on,on,on,on"
+      MaskVisibilityString    "on,on,on,on"
+      MaskInitialization      "npts=@1; fftpts=@2; HowOften=@3; ts=@4(1); if l"
+"ength(@4) > 1, offset = @4(2), else, offset = 0; end"
+      MaskDisplay	      "plot(0,0,100,100,[11,93,93,11,11],[90,90,40,40,"
+"90],[90,80,72,64,55,45,41,36,20],[50,50,52,59,67,75,78,80,80])"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "512|512|64|0.001"
+      System {
+	Name			"谱分析"
+	Location		[2, 84, 373, 269]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"automatic"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+	AutoZoom		on
+	Block {
+	  BlockType		  Inport
+	  Name			  "system input"
+	  Position		  [55, 30, 75, 50]
+	  Port			  "1"
+	  PortWidth		  "-1"
+	  SampleTime		  "-1"
+	  DataType		  "auto"
+	  SignalType		  "auto"
+	  Interpolate		  on
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "system output"
+	  Position		  [55, 110, 75, 130]
+	  Port			  "2"
+	  PortWidth		  "-1"
+	  SampleTime		  "-1"
+	  DataType		  "auto"
+	  SignalType		  "auto"
+	  Interpolate		  on
+	}
+	Block {
+	  BlockType		  Mux
+	  Name			  "Mux"
+	  Ports			  [2, 1, 0, 0, 0]
+	  Position		  [145, 71, 175, 104]
+	  Inputs		  "2"
+	  DisplayOption		  "none"
+	}
+	Block {
+	  BlockType		  "S-Function"
+	  Name			  "S-function block\nwhich calls M-file"
+	  Ports			  [1, 0, 0, 0, 0]
+	  Position		  [250, 72, 295, 108]
+	  FunctionName		  "ssfuntf"
+	  Parameters		  "fftpts,npts,HowOften,offset,ts,0"
+	  PortCounts		  "[]"
+	  SFunctionModules	  "''"
+	}
+	Line {
+	  SrcBlock		  "system output"
+	  SrcPort		  1
+	  Points		  [30, 0; 0, -25]
+	  DstBlock		  "Mux"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "system input"
+	  SrcPort		  1
+	  Points		  [30, 0; 0, 40]
+	  DstBlock		  "Mux"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Mux"
+	  SrcPort		  1
+	  DstBlock		  "S-function block\nwhich calls M-file"
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      Scope
+      Name		      "提取出的载波"
+      Ports		      [1, 0, 0, 0, 0]
+      Position		      [520, 200, 550, 230]
+      ForegroundColor	      "yellow"
+      FontName		      "宋体"
+      FontSize		      12
+      Floating		      off
+      Location		      [76, 196, 407, 340]
+      Open		      off
+      NumInputPorts	      "1"
+      TickLabels	      "OneTimeTick"
+      ZoomMode		      "on"
+      List {
+	ListType		AxesTitles
+	axes1			"%<SignalLabel>"
+      }
+      Grid		      "on"
+      TimeRange		      "1.000000"
+      YMin		      "-4"
+      YMax		      "4"
+      SaveToWorkspace	      off
+      SaveName		      "ScopeData"
+      DataFormat	      "Matrix"
+      LimitMaxRows	      on
+      MaxRows		      "5000"
+      Decimation	      "1"
+      SampleInput	      off
+      SampleTime	      "0"
+    }
+    Block {
+      BlockType		      Scope
+      Name		      "提取出的载波与\n接收信号的乘积"
+      Ports		      [1, 0, 0, 0, 0]
+      Position		      [520, 265, 550, 295]
+      FontName		      "宋体"
+      FontSize		      12
+      Floating		      off
+      Location		      [183, 253, 512, 423]
+      Open		      off
+      NumInputPorts	      "1"
+      TickLabels	      "OneTimeTick"
+      ZoomMode		      "on"
+      List {
+	ListType		AxesTitles
+	axes1			"%<SignalLabel>"
+      }
+      Grid		      "on"
+      TimeRange		      "1.000000"
+      YMin		      "-4"
+      YMax		      "4"
+      SaveToWorkspace	      off
+      SaveName		      "ScopeData"
+      DataFormat	      "Matrix"
+      LimitMaxRows	      on
+      MaxRows		      "5000"
+      Decimation	      "1"
+      SampleInput	      off
+      SampleTime	      "0"
+    }
+    Block {
+      BlockType		      SignalGenerator
+      Name		      "信号发生器\n频率（弧度/秒）"
+      Position		      [35, 63, 80, 97]
+      FontName		      "宋体"
+      FontSize		      12
+      WaveForm		      "sine"
+      Amplitude		      "1.000000"
+      Frequency		      "10.000000"
+      Units		      "rad/sec"
+    }
+    Block {
+      BlockType		      Sin
+      Name		      "载波"
+      Position		      [50, 130, 70, 150]
+      FontName		      "宋体"
+      FontSize		      12
+      Amplitude		      "1"
+      Frequency		      "100"
+      Phase		      "0"
+      SampleTime	      "0.001"
+    }
+    Block {
+      BlockType		      Gain
+      Name		      "增益"
+      Position		      [195, 202, 220, 228]
+      ForegroundColor	      "yellow"
+      FontName		      "宋体"
+      FontSize		      12
+      Gain		      "4"
+      SaturateOnIntegerOverflow	on
+    }
+    Block {
+      BlockType		      Gain
+      Name		      "增益1"
+      Position		      [435, 202, 460, 228]
+      ForegroundColor	      "yellow"
+      FontName		      "宋体"
+      FontSize		      12
+      Gain		      "4"
+      SaturateOnIntegerOverflow	on
+    }
+    Line {
+      SrcBlock		      "载波"
+      SrcPort		      1
+      Points		      [35, 0; 0, -50]
+      DstBlock		      "乘法器"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "平方运算"
+      SrcPort		      1
+      DstBlock		      "Butterworth\nBP 滤波器"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Butterworth\nBP 滤波器"
+      SrcPort		      1
+      DstBlock		      "增益"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "增益"
+      SrcPort		      1
+      DstBlock		      "二分频"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "二分频"
+      SrcPort		      1
+      DstBlock		      "Butterworth\nBP 滤波器1"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Butterworth\nBP 滤波器1"
+      SrcPort		      1
+      DstBlock		      "增益1"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "传输延迟"
+      SrcPort		      1
+      DstBlock		      "乘法器2"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "增益1"
+      SrcPort		      1
+      Points		      [15, 0]
+      Branch {
+	DstBlock		"提取出的载波"
+	DstPort			1
+      }
+      Branch {
+	Points			[0, 50; -270, 0; 0, 75]
+	DstBlock		"乘法器2"
+	DstPort			1
+      }
+    }
+    Line {
+      SrcBlock		      "Butterworth\nLP 滤波器"
+      SrcPort		      1
+      DstBlock		      "解调后信号波形"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "乘法器2"
+      SrcPort		      1
+      Points		      [20, 0]
+      Branch {
+	DstBlock		"Butterworth\nLP 滤波器"
+	DstPort			1
+      }
+      Branch {
+	Points			[0, -65]
+	DstBlock		"提取出的载波与\n接收信号的乘积"
+	DstPort			1
+      }
+    }
+    Line {
+      SrcBlock		      "乘法器"
+      SrcPort		      1
+      Points		      [20, 0]
+      Branch {
+	Points			[0, 85; -265, 0; 0, 40]
+	Branch {
+	  Points		  [0, 10]
+	  Branch {
+	    Points		    [0, 130]
+	    DstBlock		    "传输延迟"
+	    DstPort		    1
+	  }
+	  Branch {
+	    DstBlock		    "平方运算"
+	    DstPort		    2
+	  }
+	}
+	Branch {
+	  DstBlock		  "平方运算"
+	  DstPort		  1
+	}
+      }
+      Branch {
+	Points			[210, 0]
+	Branch {
+	  DstBlock		  "调制后信号波形"
+	  DstPort		  1
+	}
+	Branch {
+	  Points		  [0, 45]
+	  DstBlock		  "谱分析"
+	  DstPort		  1
+	}
+      }
+    }
+    Line {
+      SrcBlock		      "信号发生器\n频率（弧度/秒）"
+      SrcPort		      1
+      Points		      [95, 0]
+      Branch {
+	DstBlock		"乘法器"
+	DstPort			1
+      }
+      Branch {
+	Points			[0, -35; 275, 0; 0, 105]
+	DstBlock		"谱分析"
+	DstPort			2
+      }
+    }
+    Annotation {
+      Position		      [267, 12]
+      VerticalAlignment	      "top"
+      Text		      "同步调制/解调 AM 系统 （ 双边带 DSB ）"
+      FontName		      "宋体"
+      FontSize		      12
+    }
+    Annotation {
+      Position		      [302, 177]
+      VerticalAlignment	      "top"
+      Text		      "同步载波提取"
+      FontName		      "宋体"
+      FontSize		      12
+    }
+    Annotation {
+      Position		      [32, 182]
+      VerticalAlignment	      "top"
+      Text		      "接收端"
+      FontName		      "宋体"
+      FontSize		      12
+    }
+    Annotation {
+      Position		      [322, 92]
+      VerticalAlignment	      "top"
+      Text		      "已调 DSB 信号"
+      FontName		      "宋体"
+      FontSize		      12
+    }
+    Annotation {
+      Position		      [297, 107]
+      VerticalAlignment	      "top"
+      Text		      "发送端"
+      FontName		      "宋体"
+      FontSize		      12
+    }
+    Annotation {
+      Position		      [347, 67]
+      VerticalAlignment	      "top"
+      Text		      "Y(t) = X(t)*cos(Wc*t+p)"
+      FontName		      "宋体"
+      FontSize		      12
+    }
+    Annotation {
+      Position		      [152, 62]
+      VerticalAlignment	      "top"
+      Text		      "X(t)"
+      FontName		      "宋体"
+      FontSize		      12
+    }
+    Annotation {
+      Position		      [62, 42]
+      VerticalAlignment	      "top"
+      Text		      "调制信号"
+      FontName		      "宋体"
+      FontSize		      12
+    }
+    Annotation {
+      Position		      [137, 302]
+      VerticalAlignment	      "top"
+      Text		      "弥补提取载波\n所需的时延"
+      FontName		      "宋体"
+      FontSize		      12
+    }
+    Annotation {
+      Position		      [177, 112]
+      VerticalAlignment	      "top"
+      Text		      "cos ( Wc * t + p )\nWc 载波角频率\np 载波初始相"
+"位"
+      FontName		      "宋体"
+      FontSize		      12
+    }
+    Annotation {
+      Position		      [247, 157]
+      VerticalAlignment	      "top"
+      Text		      "传输信道"
+    }
+  }
+}

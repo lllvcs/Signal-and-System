@@ -1,0 +1,755 @@
+Model {
+  Name			  "base98"
+  Version		  3.00
+  SimParamPage		  "Solver"
+  SampleTimeColors	  off
+  InvariantConstants	  off
+  WideVectorLines	  off
+  ShowLineWidths	  off
+  ShowPortDataTypes	  off
+  StartTime		  "0.0"
+  StopTime		  "999999"
+  SolverMode		  "Auto"
+  Solver		  "ode45"
+  RelTol		  "1e-3"
+  AbsTol		  "1e-3"
+  Refine		  "1"
+  MaxStep		  "10"
+  InitialStep		  "auto"
+  FixedStep		  "auto"
+  MaxOrder		  5
+  OutputOption		  "RefineOutputTimes"
+  OutputTimes		  "[]"
+  LoadExternalInput	  off
+  ExternalInput		  "[t, u]"
+  SaveTime		  off
+  TimeSaveName		  "tout"
+  SaveState		  off
+  StateSaveName		  "xout"
+  SaveOutput		  off
+  OutputSaveName	  "yout"
+  LoadInitialState	  off
+  InitialState		  "xInitial"
+  SaveFinalState	  off
+  FinalStateName	  "xFinal"
+  SaveFormat		  "Matrix"
+  LimitMaxRows		  off
+  MaxRows		  "1000"
+  Decimation		  "1"
+  AlgebraicLoopMsg	  "warning"
+  MinStepSizeMsg	  "warning"
+  UnconnectedInputMsg	  "warning"
+  UnconnectedOutputMsg	  "warning"
+  UnconnectedLineMsg	  "warning"
+  InheritedTsInSrcMsg	  "warning"
+  IntegerOverflowMsg	  "warning"
+  UnnecessaryDatatypeConvMsg "none"
+  Int32ToFloatConvMsg	  "warning"
+  SignalLabelMismatchMsg  "none"
+  ConsistencyChecking	  "off"
+  ZeroCross		  on
+  SimulationMode	  "normal"
+  BlockDataTips		  on
+  BlockParametersDataTip  on
+  BlockAttributesDataTip  off
+  BlockPortWidthsDataTip  off
+  BlockDescriptionStringDataTip	off
+  BlockMaskParametersDataTip off
+  ToolBar		  on
+  StatusBar		  on
+  BrowserShowLibraryLinks off
+  BrowserLookUnderMasks	  off
+  OptimizeBlockIOStorage  on
+  BufferReuse		  on
+  BooleanDataType	  off
+  RTWSystemTargetFile	  "grt.tlc"
+  RTWInlineParameters	  off
+  RTWRetainRTWFile	  off
+  RTWTemplateMakefile	  "grt_default_tmf"
+  RTWMakeCommand	  "make_rtw"
+  RTWGenerateCodeOnly	  off
+  ExtModeMexFile	  "ext_comm"
+  ExtModeBatchMode	  off
+  ExtModeTrigType	  "manual"
+  ExtModeTrigMode	  "oneshot"
+  ExtModeTrigPort	  "1"
+  ExtModeTrigElement	  "any"
+  ExtModeTrigDuration	  1000
+  ExtModeTrigHoldOff	  0
+  ExtModeTrigDelay	  0
+  ExtModeTrigDirection	  "rising"
+  ExtModeTrigLevel	  0
+  ExtModeArchiveMode	  "off"
+  ExtModeAutoIncOneShot	  off
+  ExtModeIncDirWhenArm	  off
+  ExtModeAddSuffixToVar	  off
+  ExtModeWriteAllDataToWs off
+  ExtModeArmWhenConnect	  off
+  Created		  "Wed Jan 05 22:03:54 2000"
+  UpdateHistory		  "UpdateHistoryNever"
+  ModifiedByFormat	  "%<Auto>"
+  ModifiedDateFormat	  "%<Auto>"
+  LastModifiedDate	  "Wed Jan 05 22:12:23 2000"
+  ModelVersionFormat	  "1.%<AutoIncrement:3>"
+  ConfigurationManager	  "none"
+  BlockDefaults {
+    Orientation		    "right"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    NamePlacement	    "normal"
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+    ShowName		    on
+  }
+  AnnotationDefaults {
+    HorizontalAlignment	    "center"
+    VerticalAlignment	    "middle"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+  }
+  LineDefaults {
+    FontName		    "Helvetica"
+    FontSize		    9
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+  }
+  System {
+    Name		    "base98"
+    Location		    [113, 84, 487, 254]
+    Open		    on
+    ModelBrowserVisibility  off
+    ModelBrowserWidth	    200
+    ScreenColor		    "automatic"
+    PaperOrientation	    "landscape"
+    PaperPositionMode	    "auto"
+    PaperType		    "usletter"
+    PaperUnits		    "inches"
+    ZoomFactor		    "100"
+    AutoZoom		    on
+    ReportName		    "simulink-default.rpt"
+    Block {
+      BlockType		      SubSystem
+      Name		      "毕业设计 '98"
+      Ports		      [0, 0, 0, 0, 0]
+      Position		      [75, 41, 105, 91]
+      FontName		      "宋体"
+      FontSize		      12
+      ShowPortLabels	      off
+      System {
+	Name			"毕业设计 '98"
+	Location		[31, 84, 390, 491]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"automatic"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+	AutoZoom		on
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "Diode"
+	  Ports			  [1, 1, 0, 0, 0]
+	  Position		  [140, 153, 175, 177]
+	  DropShadow		  on
+	  FontName		  "宋体"
+	  FontSize		  12
+	  ShowPortLabels	  off
+	  MaskType		  "二极管"
+	  MaskDescription	  "二极管"
+	  MaskDisplay		  "plot([0 2 2 2],[0 0 2 -2],[2 4],[2 0],[2 4]"
+",[-2 0],[4 4 4 6],[-2 2 0 0]);"
+	  MaskIconFrame		  on
+	  MaskIconOpaque	  on
+	  MaskIconRotate	  "none"
+	  MaskIconUnits		  "autoscale"
+	  System {
+	    Name		    "Diode"
+	    Location		    [4, 207, 504, 457]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "automatic"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    ZoomFactor		    "100"
+	    AutoZoom		    on
+	    Block {
+	      BlockType		      Inport
+	      Name		      "in_1"
+	      Position		      [70, 120, 90, 140]
+	      Port		      "1"
+	      PortWidth		      "-1"
+	      SampleTime	      "-1"
+	      DataType		      "auto"
+	      SignalType	      "auto"
+	      Interpolate	      on
+	    }
+	    Block {
+	      BlockType		      Gain
+	      Name		      "Gain"
+	      Position		      [340, 117, 365, 143]
+	      Gain		      "1/2"
+	      SaturateOnIntegerOverflow	on
+	    }
+	    Block {
+	      BlockType		      Product
+	      Name		      "Product"
+	      Ports		      [2, 1, 0, 0, 0]
+	      Position		      [195, 123, 225, 147]
+	      Inputs		      "2"
+	      SaturateOnIntegerOverflow	on
+	    }
+	    Block {
+	      BlockType		      SubSystem
+	      Name		      "Sign"
+	      Ports		      [1, 1, 0, 0, 0]
+	      Position		      [120, 117, 150, 143]
+	      ShowPortLabels	      off
+	      MaskType		      "Sign"
+	      MaskDescription	      "y = sign(x)"
+	      MaskHelp		      "Sign Function:\\n\\t\\t\\ty = 1 if x > "
+"0\\n\\t\\t\\ty = 0 if x = 0\\n\\t\\t\\ty = -1 if x < 0"
+	      MaskDisplay	      "plot(-50,-50,50,50,[-50,50],[0,0],[0,0]"
+",[-50,50],[-40,0],[-30,-30],[0,40],[30,30])"
+	      MaskIconFrame	      on
+	      MaskIconOpaque	      on
+	      MaskIconRotate	      "none"
+	      MaskIconUnits	      "autoscale"
+	      System {
+		Name			"Sign"
+		Location		[159, 289, 467, 458]
+		Open			off
+		ModelBrowserVisibility	off
+		ModelBrowserWidth	200
+		ScreenColor		"automatic"
+		PaperOrientation	"landscape"
+		PaperPositionMode	"auto"
+		PaperType		"usletter"
+		PaperUnits		"inches"
+		ZoomFactor		"100"
+		AutoZoom		on
+		Block {
+		  BlockType		  Inport
+		  Name			  "in_1"
+		  Position		  [35, 30, 55, 50]
+		  Port			  "1"
+		  PortWidth		  "-1"
+		  SampleTime		  "-1"
+		  DataType		  "auto"
+		  SignalType		  "auto"
+		  Interpolate		  on
+		}
+		Block {
+		  BlockType		  Constant
+		  Name			  "Constant"
+		  Position		  [65, 105, 85, 125]
+		  Value			  "0"
+		}
+		Block {
+		  BlockType		  RelationalOperator
+		  Name			  "Relational\nOperator"
+		  Position		  [140, 32, 170, 63]
+		  Operator		  ">"
+		}
+		Block {
+		  BlockType		  RelationalOperator
+		  Name			  "Relational\nOperator1"
+		  Position		  [140, 92, 170, 123]
+		  Operator		  "<"
+		}
+		Block {
+		  BlockType		  Sum
+		  Name			  "Sum"
+		  Ports			  [2, 1, 0, 0, 0]
+		  Position		  [215, 64, 235, 91]
+		  IconShape		  "rectangular"
+		  Inputs		  "+-"
+		  SaturateOnIntegerOverflow on
+		}
+		Block {
+		  BlockType		  Outport
+		  Name			  "out_1"
+		  Position		  [265, 70, 285, 90]
+		  Port			  "1"
+		  OutputWhenDisabled	  "held"
+		  InitialOutput		  "[]"
+		}
+		Line {
+		  SrcBlock		  "in_1"
+		  SrcPort		  1
+		  Points		  [35, 0]
+		  Branch {
+		    DstBlock		    "Relational\nOperator"
+		    DstPort		    1
+		  }
+		  Branch {
+		    Points		    [0, 60]
+		    DstBlock		    "Relational\nOperator1"
+		    DstPort		    1
+		  }
+		}
+		Line {
+		  SrcBlock		  "Constant"
+		  SrcPort		  1
+		  Points		  [20, 0]
+		  Branch {
+		    DstBlock		    "Relational\nOperator1"
+		    DstPort		    2
+		  }
+		  Branch {
+		    Points		    [0, -60]
+		    DstBlock		    "Relational\nOperator"
+		    DstPort		    2
+		  }
+		}
+		Line {
+		  SrcBlock		  "Relational\nOperator1"
+		  SrcPort		  1
+		  Points		  [10, 0; 0, -25]
+		  DstBlock		  "Sum"
+		  DstPort		  2
+		}
+		Line {
+		  SrcBlock		  "Relational\nOperator"
+		  SrcPort		  1
+		  Points		  [10, 0; 0, 20]
+		  DstBlock		  "Sum"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Sum"
+		  SrcPort		  1
+		  DstBlock		  "out_1"
+		  DstPort		  1
+		}
+	      }
+	    }
+	    Block {
+	      BlockType		      Sum
+	      Name		      "Sum"
+	      Ports		      [2, 1, 0, 0, 0]
+	      Position		      [270, 120, 290, 140]
+	      IconShape		      "rectangular"
+	      Inputs		      "++"
+	      SaturateOnIntegerOverflow	on
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "out_1"
+	      Position		      [395, 120, 415, 140]
+	      Port		      "1"
+	      OutputWhenDisabled      "held"
+	      InitialOutput	      "[]"
+	    }
+	    Line {
+	      SrcBlock		      "Sum"
+	      SrcPort		      1
+	      DstBlock		      "Gain"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Product"
+	      SrcPort		      1
+	      DstBlock		      "Sum"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "in_1"
+	      SrcPort		      1
+	      Points		      [0, 0]
+	      Branch {
+		Points			[5, -40; 145, 0; 0, 35]
+		DstBlock		"Sum"
+		DstPort			1
+	      }
+	      Branch {
+		Points			[5, 50; 70, 0; 0, -40]
+		DstBlock		"Product"
+		DstPort			2
+	      }
+	      Branch {
+		DstBlock		"Sign"
+		DstPort			1
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "Sign"
+	      SrcPort		      1
+	      DstBlock		      "Product"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Gain"
+	      SrcPort		      1
+	      DstBlock		      "out_1"
+	      DstPort		      1
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  TransferFcn
+	  Name			  "Transfer Fcn3"
+	  Position		  [190, 627, 225, 663]
+	  FontName		  "宋体"
+	  FontSize		  12
+	  Numerator		  "[1]"
+	  Denominator		  "[1 1]"
+	}
+	Block {
+	  BlockType		  TransferFcn
+	  Name			  "单元1"
+	  Position		  [40, 64, 105, 106]
+	  DropShadow		  on
+	  FontName		  "宋体"
+	  FontSize		  12
+	  Numerator		  "[1]"
+	  Denominator		  "[R*C 1]"
+	  MaskType		  "积分"
+	  MaskDescription	  "积分"
+	  MaskPromptString	  "电容量（法）：|电阻值（欧姆）："
+	  MaskStyleString	  "edit,edit"
+	  MaskTunableValueString  "on,on"
+	  MaskCallbackString	  "|"
+	  MaskEnableString	  "on,on"
+	  MaskVisibilityString	  "on,on"
+	  MaskInitialization	  "C=@1;R=@2;"
+	  MaskDisplay		  "plot([0 2 2 2],[2 2 1.5 2.5],[2 6],[2.5 2.5"
+"],[2 6],[1.5 1.5],[6 6],[2.5 1.5],[6 11],[2 2],[8 8 6 10],[2 0 0 0],[6 10],[-"
+"1 -1],[8 8 7 9],[-1 -3 -3 -3]);"
+	  MaskIconFrame		  on
+	  MaskIconOpaque	  on
+	  MaskIconRotate	  "none"
+	  MaskIconUnits		  "autoscale"
+	  MaskValueString	  "1|1"
+	}
+	Block {
+	  BlockType		  TransferFcn
+	  Name			  "单元2"
+	  Position		  [40, 143, 105, 187]
+	  DropShadow		  on
+	  FontName		  "宋体"
+	  FontSize		  12
+	  Numerator		  "[R*C 0]"
+	  Denominator		  "[R*C 1]"
+	  MaskType		  "微分"
+	  MaskDescription	  "微分"
+	  MaskPromptString	  "电容量（法）：|电阻值（欧姆）："
+	  MaskStyleString	  "edit,edit"
+	  MaskTunableValueString  "on,on"
+	  MaskCallbackString	  "|"
+	  MaskEnableString	  "on,on"
+	  MaskVisibilityString	  "on,on"
+	  MaskInitialization	  "C=@1;R=@2;"
+	  MaskDisplay		  "plot([0 2 2 2],[2 2 0 4],[3 3 3 8],[0 4 2 2"
+"],[6 6 5.5 6.5],[2 0 0 0],[5.5 5.5],[0 -4],[6.5 6.5],[0 -4],[5.5 6.5 6 6],[-4"
+" -4 -4 -5.5],[5.5 6.5],[-5.5 -5.5]);"
+	  MaskIconFrame		  on
+	  MaskIconOpaque	  on
+	  MaskIconRotate	  "none"
+	  MaskIconUnits		  "autoscale"
+	  MaskValueString	  "1|1"
+	}
+	Block {
+	  BlockType		  TransferFcn
+	  Name			  "单元3"
+	  Position		  [40, 223, 105, 267]
+	  DropShadow		  on
+	  FontName		  "宋体"
+	  FontSize		  12
+	  Numerator		  "[R]"
+	  Denominator		  "[L R]"
+	  MaskType		  "单元3"
+	  MaskDescription	  "单元3"
+	  MaskPromptString	  "电感量（亨）：|电阻值（欧）："
+	  MaskStyleString	  "edit,edit"
+	  MaskTunableValueString  "on,on"
+	  MaskCallbackString	  "|"
+	  MaskEnableString	  "on,on"
+	  MaskVisibilityString	  "on,on"
+	  MaskInitialization	  "L=@1;R=@2;"
+	  MaskDisplay		  "plot([0 1],[1 1],[1:1/7:2],[1 1.5 1.707 1.8"
+"66 1.866 1.707 1.5 1],[2:1/7:3],[1 1.5 1.707 1.866 1.866 1.707 1.5 1],[3:1/7:"
+"4],[1 1.5 1.707 1.866 1.866 1.707 1.5 1],[4:1/7:5],[1 1.5 1.707 1.866 1.866 1"
+".707 1.5 1],[5 8],[1 1],[6.5 6.5 6 7],[1 0 0 0],[6 6],[0 -4],[7 7],[0 -4],[6 "
+"7 6.5 6.5],[-4 -4 -4 -5.5],[6 7],[-5.5 -5.5])"
+	  MaskIconFrame		  on
+	  MaskIconOpaque	  on
+	  MaskIconRotate	  "none"
+	  MaskIconUnits		  "autoscale"
+	  MaskValueString	  "1|1"
+	}
+	Block {
+	  BlockType		  TransferFcn
+	  Name			  "单元4"
+	  Position		  [40, 299, 105, 341]
+	  DropShadow		  on
+	  FontName		  "宋体"
+	  FontSize		  12
+	  Numerator		  "[1]"
+	  Denominator		  "[L*C 0 1]"
+	  MaskType		  "单元4"
+	  MaskDescription	  "单元4"
+	  MaskPromptString	  "电感量（亨）：|电容量（法）："
+	  MaskStyleString	  "edit,edit"
+	  MaskTunableValueString  "on,on"
+	  MaskCallbackString	  "|"
+	  MaskEnableString	  "on,on"
+	  MaskVisibilityString	  "on,on"
+	  MaskInitialization	  "L=@1;C=@2;"
+	  MaskDisplay		  "plot([0 1],[1 1],[1:1/7:2],[1 1.5 1.707 1.8"
+"66 1.866 1.707 1.5 1],[2:1/7:3],[1 1.5 1.707 1.866 1.866 1.707 1.5 1],[3:1/7:"
+"4],[1 1.5 1.707 1.866 1.866 1.707 1.5 1],[4:1/7:5],[1 1.5 1.707 1.866 1.866 1"
+".707 1.5 1],[5 11],[1 1],[8 8 6 10],[1 -1 -1 -1],[6 10],[-2 -2],[8 8 7 9],[-2"
+" -4 -4 -4]);"
+	  MaskIconFrame		  on
+	  MaskIconOpaque	  on
+	  MaskIconRotate	  "none"
+	  MaskIconUnits		  "autoscale"
+	  MaskValueString	  "1|1"
+	}
+	Block {
+	  BlockType		  TransferFcn
+	  Name			  "单元5"
+	  Position		  [140, 64, 310, 116]
+	  DropShadow		  on
+	  FontName		  "宋体"
+	  FontSize		  12
+	  Numerator		  "[1]"
+	  Denominator		  "[L*C1*C2*R L*C2 R*(C1+C2) 1]"
+	  MaskType		  "单元5"
+	  MaskDescription	  "单元5"
+	  MaskPromptString	  "电阻R（欧）：|电容C1（法）：|电感L（亨）：|"
+"电容C2（法）："
+	  MaskStyleString	  "edit,edit,edit,edit"
+	  MaskTunableValueString  "on,on,on,on"
+	  MaskCallbackString	  "|||"
+	  MaskEnableString	  "on,on,on,on"
+	  MaskVisibilityString	  "on,on,on,on"
+	  MaskInitialization	  "R=@1;C1=@2;L=@3;C2=@4;"
+	  MaskDisplay		  "plot([0 2 2 2],[2 2 1.5 2.5],[2 6],[2.5 2.5"
+"],[2 6],[1.5 1.5],[6 6],[2.5 1.5],[6 11],[2 2],[8 8 6 10],[2 0 0 0],[6 10],[-"
+"1 -1],[8 8 7 9],[-1 -3 -3 -3],[11:1/7:12],[2 2.5 2.707 2.866 2.866 2.707 2.5 "
+"2],[12:1/7:13],[2 2.5 2.707 2.866 2.866 2.707 2.5 2],[13:1/7:14],[2 2.5 2.707"
+" 2.866 2.866 2.707 2.5 2],[14:1/7:15],[2 2.5 2.707 2.866 2.866 2.707 2.5 2],["
+"15 21],[2 2],[18 18 16 20],[2 0 0 0],[16 20],[-1 -1],[18 18 17 19],[-1 -3 -3 "
+"-3]);disp('R     C1     L      C2')"
+	  MaskIconFrame		  on
+	  MaskIconOpaque	  on
+	  MaskIconRotate	  "none"
+	  MaskIconUnits		  "autoscale"
+	  MaskValueString	  "1|1|1|1"
+	}
+	Block {
+	  BlockType		  TransferFcn
+	  Name			  "单元6"
+	  Position		  [140, 223, 245, 267]
+	  DropShadow		  on
+	  FontName		  "宋体"
+	  FontSize		  12
+	  Numerator		  "[R]"
+	  Denominator		  "[R*C R+1]"
+	  MaskType		  "单元6"
+	  MaskDescription	  "单元6"
+	  MaskPromptString	  "电阻值（欧）：|电容值（法）："
+	  MaskStyleString	  "edit,edit"
+	  MaskTunableValueString  "on,on"
+	  MaskCallbackString	  "|"
+	  MaskEnableString	  "on,on"
+	  MaskVisibilityString	  "on,on"
+	  MaskInitialization	  "R=@1;C=@2;"
+	  MaskDisplay		  "plot([0 15],[2 2],[8 8 6 10],[2 0 0 0],[6 1"
+"0],[-1 -1],[8 8 7 9],[-1 -4 -4 -4],[12.5 12.5 12 13],[2 1 1 1],[12 12],[1 -3]"
+",[13 13],[1 -3],[12 13 12.5 12.5],[-3 -3 -3 -4],[12 13],[-4 -4]);"
+	  MaskIconFrame		  on
+	  MaskIconOpaque	  on
+	  MaskIconRotate	  "none"
+	  MaskIconUnits		  "autoscale"
+	  MaskValueString	  "1|1"
+	}
+	Block {
+	  BlockType		  TransferFcn
+	  Name			  "单元7"
+	  Position		  [140, 295, 260, 345]
+	  DropShadow		  on
+	  FontName		  "宋体"
+	  FontSize		  12
+	  Numerator		  "[1]"
+	  Denominator		  "[L*C R*C 1]"
+	  MaskType		  " 单元7"
+	  MaskDescription	  " 单元7"
+	  MaskPromptString	  "电阻值（欧）：|电感值（亨）：|电容值（法）"
+"："
+	  MaskStyleString	  "edit,edit,edit"
+	  MaskTunableValueString  "on,on,on"
+	  MaskCallbackString	  "||"
+	  MaskEnableString	  "on,on,on"
+	  MaskVisibilityString	  "on,on,on"
+	  MaskInitialization	  "R=@1;L=@2;C=@3;"
+	  MaskDisplay		  "plot([3 5 5 5],[2 2 1.5 2.5],[5 9],[2.5 2.5"
+"],[5 9],[1.5 1.5],[9 9],[2.5 1.5],[9 11],[2 2],[11:1/7:12],[2 2.5 2.707 2.866"
+" 2.866 2.707 2.5 2],[12:1/7:13],[2 2.5 2.707 2.866 2.866 2.707 2.5 2],[13:1/7"
+":14],[2 2.5 2.707 2.866 2.866 2.707 2.5 2],[14:1/7:15],[2 2.5 2.707 2.866 2.8"
+"66 2.707 2.5 2],[15 21],[2 2],[18 18 16 20],[2 0 0 0],[16 20],[-1 -1],[18 18 "
+"17 19],[-1 -3 -3 -3]);"
+	  MaskIconFrame		  on
+	  MaskIconOpaque	  on
+	  MaskIconRotate	  "none"
+	  MaskIconUnits		  "autoscale"
+	  MaskValueString	  "1|1|1"
+	}
+	Block {
+	  BlockType		  MATLABFcn
+	  Name			  "二分频"
+	  Position		  [200, 146, 270, 184]
+	  ForegroundColor	  "yellow"
+	  FontName		  "宋体"
+	  FontSize		  12
+	  MATLABFcn		  "df2(u,m)"
+	  OutputWidth		  "-1"
+	  OutputSignalType	  "auto"
+	  MaskType		  "分频器"
+	  MaskDescription	  "二分频器"
+	  MaskPromptString	  "判决区间："
+	  MaskStyleString	  "edit"
+	  MaskTunableValueString  "on"
+	  MaskEnableString	  "on"
+	  MaskVisibilityString	  "on"
+	  MaskInitialization	  "m=@1;"
+	  MaskDisplay		  "disp('Frequency\\n—————\\n2')"
+	  MaskIconFrame		  on
+	  MaskIconOpaque	  on
+	  MaskIconRotate	  "none"
+	  MaskIconUnits		  "autoscale"
+	  MaskValueString	  "100"
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "频谱分析仪"
+	  Ports			  [1, 0, 0, 0, 0]
+	  Position		  [295, 142, 330, 188]
+	  DropShadow		  on
+	  CopyFcn		  "ssfunpsd([],[],[],'CopyBlock')"
+	  DeleteFcn		  "ssfunpsd([],[],[],'DeleteBlock')"
+	  LoadFcn		  "ssfunpsd([],[],[],'LoadBlock')"
+	  StartFcn		  "ssfunpsd([],[],[],'Start')"
+	  NameChangeFcn		  "ssfunpsd([],[],[],'NameChange')"
+	  FontName		  "宋体"
+	  FontSize		  12
+	  ShowPortLabels	  off
+	  MaskType		  "频谱分析仪"
+	  MaskDescription	  "频谱分析仪（利用图形窗口显示实时结果）"
+	  MaskHelp		  "当把该模块连接到一个系统的输出时，将以图形"
+"窗口的方式显示出信号的频谱图。"
+	  MaskPromptString	  "缓冲区长度：|进行 FFT 运算的点数：|在多少点"
+"后画图：|采样周期："
+	  MaskStyleString	  "edit,edit,edit,edit"
+	  MaskTunableValueString  "on,on,on,on"
+	  MaskCallbackString	  "|||"
+	  MaskEnableString	  "on,on,on,on"
+	  MaskVisibilityString	  "on,on,on,on"
+	  MaskInitialization	  "npts=@1; fftpts=@2; HowOften=@3; ts=@4(1); "
+"if length(@4) > 1, offset = @4(2), else, offset = 0; end"
+	  MaskDisplay		  "plot(0,0,100,100,[14,91,91,14,14],[86,86,40"
+",40,86],[85,82,80,79,75,67,63,60,57,53,41,36,33,27,24],[49,50,53,50,49,51,54,"
+"66,54,50,50,52,81,51,49])"
+	  MaskIconFrame		  on
+	  MaskIconOpaque	  on
+	  MaskIconRotate	  "none"
+	  MaskIconUnits		  "autoscale"
+	  MaskValueString	  "1024|1024|64|0.01"
+	  System {
+	    Name		    "频谱分析仪"
+	    Location		    [134, 208, 394, 358]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "automatic"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    ZoomFactor		    "100"
+	    AutoZoom		    on
+	    Block {
+	      BlockType		      Inport
+	      Name		      "in_1"
+	      Position		      [30, 65, 50, 85]
+	      Port		      "1"
+	      PortWidth		      "-1"
+	      SampleTime	      "-1"
+	      DataType		      "auto"
+	      SignalType	      "auto"
+	      Interpolate	      on
+	    }
+	    Block {
+	      BlockType		      "S-Function"
+	      Name		      "S-function block \nwhich calls M-file"
+	      Ports		      [1, 1, 0, 0, 0]
+	      Position		      [140, 56, 190, 94]
+	      FunctionName	      "ssfunpsd"
+	      Parameters	      "fftpts,npts,HowOften,offset,ts,0"
+	      PortCounts	      "[]"
+	      SFunctionModules	      "''"
+	    }
+	    Line {
+	      SrcBlock		      "in_1"
+	      SrcPort		      1
+	      DstBlock		      "S-function block \nwhich calls M-file"
+	      DstPort		      1
+	    }
+	  }
+	}
+	Annotation {
+	  Position		  [167, 22]
+	  VerticalAlignment	  "top"
+	  Text			  "毕业设计单元库"
+	  FontName		  "楷体_GB2312"
+	  FontSize		  14
+	  FontWeight		  "bold"
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "常用模块"
+      Ports		      [0, 0, 0, 0, 0]
+      Position		      [215, 34, 280, 96]
+      OpenFcn		      "axzblock"
+      FontName		      "宋体"
+      FontSize		      12
+      ShowPortLabels	      off
+      MaskDisplay	      "disp('模块库')"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      System {
+	Name			"常用模块"
+	Location		[-10, 380, 117, 533]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"automatic"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+	AutoZoom		on
+      }
+    }
+  }
+}

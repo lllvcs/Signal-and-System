@@ -1,0 +1,820 @@
+Model {
+  Name			  "yjsh"
+  Version		  3.00
+  SimParamPage		  "Solver"
+  SampleTimeColors	  off
+  InvariantConstants	  off
+  WideVectorLines	  off
+  ShowLineWidths	  off
+  ShowPortDataTypes	  off
+  StartTime		  "0.0"
+  StopTime		  "30"
+  SolverMode		  "Auto"
+  Solver		  "ode45"
+  RelTol		  "1e-3"
+  AbsTol		  "1e-3"
+  Refine		  "1"
+  MaxStep		  "0.1"
+  InitialStep		  "auto"
+  FixedStep		  "auto"
+  MaxOrder		  5
+  OutputOption		  "RefineOutputTimes"
+  OutputTimes		  "[]"
+  LoadExternalInput	  off
+  ExternalInput		  "[t, u]"
+  SaveTime		  off
+  TimeSaveName		  "tout"
+  SaveState		  off
+  StateSaveName		  "xout"
+  SaveOutput		  off
+  OutputSaveName	  "yout"
+  LoadInitialState	  off
+  InitialState		  "xInitial"
+  SaveFinalState	  off
+  FinalStateName	  "xFinal"
+  SaveFormat		  "Matrix"
+  LimitMaxRows		  off
+  MaxRows		  "1000"
+  Decimation		  "1"
+  AlgebraicLoopMsg	  "warning"
+  MinStepSizeMsg	  "warning"
+  UnconnectedInputMsg	  "warning"
+  UnconnectedOutputMsg	  "warning"
+  UnconnectedLineMsg	  "warning"
+  InheritedTsInSrcMsg	  "warning"
+  IntegerOverflowMsg	  "warning"
+  UnnecessaryDatatypeConvMsg "none"
+  Int32ToFloatConvMsg	  "warning"
+  SignalLabelMismatchMsg  "none"
+  ConsistencyChecking	  "off"
+  ZeroCross		  on
+  SimulationMode	  "normal"
+  BlockDataTips		  on
+  BlockParametersDataTip  on
+  BlockAttributesDataTip  off
+  BlockPortWidthsDataTip  off
+  BlockDescriptionStringDataTip	off
+  BlockMaskParametersDataTip off
+  ToolBar		  on
+  StatusBar		  on
+  BrowserShowLibraryLinks off
+  BrowserLookUnderMasks	  off
+  OptimizeBlockIOStorage  on
+  BufferReuse		  on
+  BooleanDataType	  off
+  RTWSystemTargetFile	  "grt.tlc"
+  RTWInlineParameters	  off
+  RTWRetainRTWFile	  off
+  RTWTemplateMakefile	  "grt_default_tmf"
+  RTWMakeCommand	  "make_rtw"
+  RTWGenerateCodeOnly	  off
+  ExtModeMexFile	  "ext_comm"
+  ExtModeBatchMode	  off
+  ExtModeTrigType	  "manual"
+  ExtModeTrigMode	  "oneshot"
+  ExtModeTrigPort	  "1"
+  ExtModeTrigElement	  "any"
+  ExtModeTrigDuration	  1000
+  ExtModeTrigHoldOff	  0
+  ExtModeTrigDelay	  0
+  ExtModeTrigDirection	  "rising"
+  ExtModeTrigLevel	  0
+  ExtModeArchiveMode	  "off"
+  ExtModeAutoIncOneShot	  off
+  ExtModeIncDirWhenArm	  off
+  ExtModeAddSuffixToVar	  off
+  ExtModeWriteAllDataToWs off
+  ExtModeArmWhenConnect	  off
+  Created		  "Wed Jan 05 21:17:50 2000"
+  UpdateHistory		  "UpdateHistoryNever"
+  ModifiedByFormat	  "%<Auto>"
+  ModifiedDateFormat	  "%<Auto>"
+  LastModifiedDate	  "Fri Mar 31 10:19:25 2000"
+  ModelVersionFormat	  "1.%<AutoIncrement:3>"
+  ConfigurationManager	  "none"
+  BlockDefaults {
+    Orientation		    "right"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    NamePlacement	    "normal"
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+    ShowName		    on
+  }
+  AnnotationDefaults {
+    HorizontalAlignment	    "center"
+    VerticalAlignment	    "middle"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+  }
+  LineDefaults {
+    FontName		    "Helvetica"
+    FontSize		    9
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+  }
+  System {
+    Name		    "yjsh"
+    Location		    [142, 220, 591, 542]
+    Open		    on
+    ModelBrowserVisibility  off
+    ModelBrowserWidth	    200
+    ScreenColor		    "automatic"
+    PaperOrientation	    "landscape"
+    PaperPositionMode	    "auto"
+    PaperType		    "usletter"
+    PaperUnits		    "inches"
+    ZoomFactor		    "100"
+    AutoZoom		    on
+    ReportName		    "simulink-default.rpt"
+    Block {
+      BlockType		      SubSystem
+      Name		      "方波信号"
+      Ports		      [0, 1, 0, 0, 0]
+      Position		      [45, 149, 75, 181]
+      FontName		      "宋体"
+      FontSize		      12
+      ShowPortLabels	      off
+      MaskType		      "Pulse Generator"
+      MaskDescription	      "Pulse Generator."
+      MaskHelp		      "Pulse generator which ensures pulse\\ntransitio"
+"ns are hit. Provides a vector of pulses when the height is entered as a vecto"
+"r.\\nUnmask to see how it works."
+      MaskPromptString	      "Pulse period (secs):|Pulse width:|Pulse height:"
+"|Pulse start time:"
+      MaskStyleString	      "edit,edit,edit,edit"
+      MaskTunableValueString  "on,on,on,on"
+      MaskCallbackString      "|||"
+      MaskEnableString	      "on,on,on,on"
+      MaskVisibilityString    "on,on,on,on"
+      MaskInitialization      "Ts=@1; du=@2; ht=@3; stt=@4; ini=ones(length(ht"
+"),1); st1=rem(stt,Ts); st2=rem(stt+du,Ts);if(Ts<=1.2*du),ini=zeros(length(ht)"
+",1);end;"
+      MaskDisplay	      "plot(0,0,100,100,[90,75,75,60,60,35,35,20,20,10"
+"],[20,20,80,80,20,20,80,80,20,20])"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "20|20|1|1"
+      System {
+	Name			"方波信号"
+	Location		[158, 441, 759, 682]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"automatic"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+	AutoZoom		on
+	Block {
+	  BlockType		  Clock
+	  Name			  "Clock1"
+	  Position		  [295, 100, 315, 120]
+	  ShowName		  off
+	  DisplayTime		  off
+	  Decimation		  "10"
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "Constant"
+	  Position		  [25, 30, 45, 50]
+	  Value			  "1"
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "Constant1"
+	  Position		  [295, 149, 320, 171]
+	  Value			  "stt"
+	}
+	Block {
+	  BlockType		  Gain
+	  Name			  "Gain"
+	  Position		  [510, 102, 535, 128]
+	  ShowName		  off
+	  Gain			  "ht"
+	  SaturateOnIntegerOverflow on
+	}
+	Block {
+	  BlockType		  Logic
+	  Name			  "Logical\nOperator"
+	  Ports			  [2, 1, 0, 0, 0]
+	  Position		  [285, 38, 315, 62]
+	  Operator		  "XOR"
+	  Inputs		  "2"
+	}
+	Block {
+	  BlockType		  Logic
+	  Name			  "Logical\nOperator1"
+	  Ports			  [1, 1, 0, 0, 0]
+	  Position		  [355, 38, 385, 62]
+	  Operator		  "NOT"
+	  Inputs		  "1"
+	}
+	Block {
+	  BlockType		  Product
+	  Name			  "Product"
+	  Ports			  [2, 1, 0, 0, 0]
+	  Position		  [455, 105, 480, 125]
+	  ShowName		  off
+	  Inputs		  "2"
+	  SaturateOnIntegerOverflow on
+	}
+	Block {
+	  BlockType		  RelationalOperator
+	  Name			  "Relational\noperator"
+	  Position		  [370, 102, 400, 133]
+	  ShowName		  off
+	  Operator		  ">="
+	}
+	Block {
+	  BlockType		  Sum
+	  Name			  "Sum"
+	  Ports			  [2, 1, 0, 0, 0]
+	  Position		  [135, 35, 155, 55]
+	  ShowName		  off
+	  IconShape		  "rectangular"
+	  Inputs		  "+-"
+	  SaturateOnIntegerOverflow on
+	}
+	Block {
+	  BlockType		  Sum
+	  Name			  "Sum1"
+	  Ports			  [2, 1, 0, 0, 0]
+	  Position		  [130, 120, 150, 140]
+	  ShowName		  off
+	  IconShape		  "rectangular"
+	  Inputs		  "+-"
+	  SaturateOnIntegerOverflow on
+	}
+	Block {
+	  BlockType		  UnitDelay
+	  Name			  "Unit Delay"
+	  Position		  [145, 75, 195, 95]
+	  Orientation		  "left"
+	  X0			  "0"
+	  SampleTime		  "[Ts,st1]"
+	}
+	Block {
+	  BlockType		  UnitDelay
+	  Name			  "Unit Delay1"
+	  Position		  [140, 165, 190, 185]
+	  Orientation		  "left"
+	  X0			  "ini"
+	  SampleTime		  "[Ts,st2]"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "out_1"
+	  Position		  [560, 105, 580, 125]
+	  ShowName		  off
+	  Port			  "1"
+	  OutputWhenDisabled	  "held"
+	  InitialOutput		  "[]"
+	}
+	Line {
+	  SrcBlock		  "Unit Delay1"
+	  SrcPort		  1
+	  Points		  [-35, 0; 0, -40]
+	  DstBlock		  "Sum1"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Sum1"
+	  SrcPort		  1
+	  Points		  [0, 0]
+	  Branch {
+	    Points		    [90, 0; 0, -75]
+	    DstBlock		    "Logical\nOperator"
+	    DstPort		    2
+	  }
+	  Branch {
+	    Points		    [55, 0; 0, 45]
+	    DstBlock		    "Unit Delay1"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "Constant"
+	  SrcPort		  1
+	  Points		  [0, 0]
+	  Branch {
+	    Points		    [20, 0; 0, 85]
+	    DstBlock		    "Sum1"
+	    DstPort		    1
+	  }
+	  Branch {
+	    DstBlock		    "Sum"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "Sum"
+	  SrcPort		  1
+	  Points		  [0, 0]
+	  Branch {
+	    DstBlock		    "Logical\nOperator"
+	    DstPort		    1
+	  }
+	  Branch {
+	    Points		    [70, 0; 0, 40]
+	    DstBlock		    "Unit Delay"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "Unit Delay"
+	  SrcPort		  1
+	  Points		  [-35, 0; 0, -35]
+	  DstBlock		  "Sum"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Clock1"
+	  SrcPort		  1
+	  DstBlock		  "Relational\noperator"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Relational\noperator"
+	  SrcPort		  1
+	  DstBlock		  "Product"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Product"
+	  SrcPort		  1
+	  DstBlock		  "Gain"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Gain"
+	  SrcPort		  1
+	  DstBlock		  "out_1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Constant1"
+	  SrcPort		  1
+	  Points		  [20, 0; 0, -35]
+	  DstBlock		  "Relational\noperator"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Logical\nOperator"
+	  SrcPort		  1
+	  DstBlock		  "Logical\nOperator1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Logical\nOperator1"
+	  SrcPort		  1
+	  Points		  [40, 0; 0, 60]
+	  DstBlock		  "Product"
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "频谱分析仪1\n（系统1的频谱）"
+      Ports		      [2, 0, 0, 0, 0]
+      Position		      [265, 97, 295, 133]
+      DropShadow	      on
+      FontName		      "宋体"
+      FontSize		      12
+      ShowPortLabels	      off
+      MaskType		      "Spectrum analyzer."
+      MaskDescription	      "Spectrum analyser using graph window.\nHook inp"
+"ut 1 to system input.\nHook input 2 to system output."
+      MaskHelp		      "Hook the system's input to the first port of th"
+"is block and the system's output to second port. Results are displayed as the"
+" frequency response of this system. Use signals with high harmonic content fo"
+"r best results. "
+      MaskPromptString	      "Length of buffer:|Number of points for fft:|Plo"
+"t after how many points:|Sample time:"
+      MaskStyleString	      "edit,edit,edit,edit"
+      MaskTunableValueString  "on,on,on,on"
+      MaskCallbackString      "|||"
+      MaskEnableString	      "on,on,on,on"
+      MaskVisibilityString    "on,on,on,on"
+      MaskInitialization      "npts=@1; fftpts=@2; HowOften=@3; ts=@4(1); if l"
+"ength(@4) > 1, offset = @4(2), else, offset = 0; end"
+      MaskDisplay	      "plot(0,0,100,100,[11,93,93,11,11],[90,90,40,40,"
+"90],[90,80,72,64,55,45,41,36,20],[50,50,52,59,67,75,78,80,80])"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "512|1024|100|0.05"
+      System {
+	Name			"频谱分析仪1\n（系统1的频谱）"
+	Location		[6, 84, 377, 269]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"automatic"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+	AutoZoom		on
+	Block {
+	  BlockType		  Inport
+	  Name			  "system input"
+	  Position		  [55, 30, 75, 50]
+	  Port			  "1"
+	  PortWidth		  "-1"
+	  SampleTime		  "-1"
+	  DataType		  "auto"
+	  SignalType		  "auto"
+	  Interpolate		  on
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "system output"
+	  Position		  [55, 110, 75, 130]
+	  Port			  "2"
+	  PortWidth		  "-1"
+	  SampleTime		  "-1"
+	  DataType		  "auto"
+	  SignalType		  "auto"
+	  Interpolate		  on
+	}
+	Block {
+	  BlockType		  Mux
+	  Name			  "Mux"
+	  Ports			  [2, 1, 0, 0, 0]
+	  Position		  [145, 71, 175, 104]
+	  Inputs		  "2"
+	  DisplayOption		  "none"
+	}
+	Block {
+	  BlockType		  "S-Function"
+	  Name			  "S-function block\nwhich calls M-file"
+	  Ports			  [1, 0, 0, 0, 0]
+	  Position		  [250, 72, 295, 108]
+	  FunctionName		  "ssfuntf"
+	  Parameters		  "fftpts,npts,HowOften,offset,ts,0"
+	  PortCounts		  "[]"
+	  SFunctionModules	  "''"
+	}
+	Line {
+	  SrcBlock		  "system output"
+	  SrcPort		  1
+	  Points		  [30, 0; 0, -25]
+	  DstBlock		  "Mux"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "system input"
+	  SrcPort		  1
+	  Points		  [30, 0; 0, 40]
+	  DstBlock		  "Mux"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Mux"
+	  SrcPort		  1
+	  DstBlock		  "S-function block\nwhich calls M-file"
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "频谱分析仪2\n（系统2的频谱）"
+      Ports		      [2, 0, 0, 0, 0]
+      Position		      [270, 196, 300, 234]
+      DropShadow	      on
+      FontName		      "宋体"
+      FontSize		      12
+      ShowPortLabels	      off
+      MaskType		      "Spectrum analyzer."
+      MaskDescription	      "Spectrum analyser using graph window.\nHook inp"
+"ut 1 to system input.\nHook input 2 to system output."
+      MaskHelp		      "Hook the system's input to the first port of th"
+"is block and the system's output to second port. Results are displayed as the"
+" frequency response of this system. Use signals with high harmonic content fo"
+"r best results. "
+      MaskPromptString	      "Length of buffer:|Number of points for fft:|Plo"
+"t after how many points:|Sample time:"
+      MaskStyleString	      "edit,edit,edit,edit"
+      MaskTunableValueString  "on,on,on,on"
+      MaskCallbackString      "|||"
+      MaskEnableString	      "on,on,on,on"
+      MaskVisibilityString    "on,on,on,on"
+      MaskInitialization      "npts=@1; fftpts=@2; HowOften=@3; ts=@4(1); if l"
+"ength(@4) > 1, offset = @4(2), else, offset = 0; end"
+      MaskDisplay	      "plot(0,0,100,100,[11,93,93,11,11],[90,90,40,40,"
+"90],[90,80,72,64,55,45,41,36,20],[50,50,52,59,67,75,78,80,80])"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "512|1024|100|0.05"
+      System {
+	Name			"频谱分析仪2\n（系统2的频谱）"
+	Location		[6, 84, 377, 269]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"automatic"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+	AutoZoom		on
+	Block {
+	  BlockType		  Inport
+	  Name			  "system input"
+	  Position		  [55, 30, 75, 50]
+	  Port			  "1"
+	  PortWidth		  "-1"
+	  SampleTime		  "-1"
+	  DataType		  "auto"
+	  SignalType		  "auto"
+	  Interpolate		  on
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "system output"
+	  Position		  [55, 110, 75, 130]
+	  Port			  "2"
+	  PortWidth		  "-1"
+	  SampleTime		  "-1"
+	  DataType		  "auto"
+	  SignalType		  "auto"
+	  Interpolate		  on
+	}
+	Block {
+	  BlockType		  Mux
+	  Name			  "Mux"
+	  Ports			  [2, 1, 0, 0, 0]
+	  Position		  [145, 71, 175, 104]
+	  Inputs		  "2"
+	  DisplayOption		  "none"
+	}
+	Block {
+	  BlockType		  "S-Function"
+	  Name			  "S-function block\nwhich calls M-file"
+	  Ports			  [1, 0, 0, 0, 0]
+	  Position		  [250, 72, 295, 108]
+	  FunctionName		  "ssfuntf"
+	  Parameters		  "fftpts,npts,HowOften,offset,ts,0"
+	  PortCounts		  "[]"
+	  SFunctionModules	  "''"
+	}
+	Line {
+	  SrcBlock		  "system output"
+	  SrcPort		  1
+	  Points		  [30, 0; 0, -25]
+	  DstBlock		  "Mux"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "system input"
+	  SrcPort		  1
+	  Points		  [30, 0; 0, 40]
+	  DstBlock		  "Mux"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Mux"
+	  SrcPort		  1
+	  DstBlock		  "S-function block\nwhich calls M-file"
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      Scope
+      Name		      "示波器\n（输入信号）"
+      Ports		      [1, 0, 0, 0, 0]
+      Position		      [345, 57, 375, 93]
+      FontName		      "宋体"
+      FontSize		      12
+      Floating		      off
+      Location		      [307, 31, 640, 182]
+      Open		      off
+      NumInputPorts	      "1"
+      TickLabels	      "OneTimeTick"
+      ZoomMode		      "on"
+      List {
+	ListType		AxesTitles
+	axes1			"%<SignalLabel>"
+      }
+      Grid		      "on"
+      TimeRange		      "30.000000"
+      YMin		      "-1.5"
+      YMax		      "1.5"
+      SaveToWorkspace	      off
+      SaveName		      "ScopeData"
+      DataFormat	      "Matrix"
+      LimitMaxRows	      on
+      MaxRows		      "5000"
+      Decimation	      "1"
+      SampleInput	      off
+      SampleTime	      "0"
+    }
+    Block {
+      BlockType		      Scope
+      Name		      "示波器\n（系统1的响应）"
+      Ports		      [1, 0, 0, 0, 0]
+      Position		      [350, 148, 380, 182]
+      FontName		      "宋体"
+      FontSize		      12
+      Floating		      off
+      Location		      [1, 23, 1025, 767]
+      Open		      off
+      NumInputPorts	      "1"
+      TickLabels	      "OneTimeTick"
+      ZoomMode		      "on"
+      List {
+	ListType		AxesTitles
+	axes1			"%<SignalLabel>"
+      }
+      Grid		      "on"
+      TimeRange		      "30.000000"
+      YMin		      "-1.5"
+      YMax		      "1.5"
+      SaveToWorkspace	      off
+      SaveName		      "ScopeData"
+      DataFormat	      "Matrix"
+      LimitMaxRows	      on
+      MaxRows		      "5000"
+      Decimation	      "1"
+      SampleInput	      off
+      SampleTime	      "0"
+    }
+    Block {
+      BlockType		      Scope
+      Name		      "示波器\n（系统2的响应）"
+      Ports		      [1, 0, 0, 0, 0]
+      Position		      [355, 247, 385, 283]
+      FontName		      "宋体"
+      FontSize		      12
+      Floating		      off
+      Location		      [306, 303, 640, 469]
+      Open		      off
+      NumInputPorts	      "1"
+      TickLabels	      "OneTimeTick"
+      ZoomMode		      "on"
+      List {
+	ListType		AxesTitles
+	axes1			"%<SignalLabel>"
+      }
+      Grid		      "on"
+      TimeRange		      "30.000000"
+      YMin		      "-1.5"
+      YMax		      "1.5"
+      SaveToWorkspace	      off
+      SaveName		      "ScopeData"
+      DataFormat	      "Matrix"
+      LimitMaxRows	      on
+      MaxRows		      "5000"
+      Decimation	      "1"
+      SampleInput	      off
+      SampleTime	      "0"
+    }
+    Block {
+      BlockType		      TransferFcn
+      Name		      "一阶系统1"
+      Position		      [120, 141, 190, 189]
+      FontName		      "宋体"
+      FontSize		      12
+      Numerator		      "[R*C 0]"
+      Denominator	      "[R*C 1]"
+      MaskType		      "微分"
+      MaskDescription	      "微分"
+      MaskPromptString	      "电容量（法）：|电阻值（欧姆）："
+      MaskStyleString	      "edit,edit"
+      MaskTunableValueString  "on,on"
+      MaskCallbackString      "|"
+      MaskEnableString	      "on,on"
+      MaskVisibilityString    "on,on"
+      MaskInitialization      "C=@1;R=@2;"
+      MaskDisplay	      "plot([0 2 2 2],[2 2 0 4],[3 3 3 8],[0 4 2 2],[6"
+" 6 5.5 6.5],[2 0 0 0],[5.5 5.5],[0 -4],[6.5 6.5],[0 -4],[5.5 6.5 6 6],[-4 -4 "
+"-4 -5.5],[5.5 6.5],[-5.5 -5.5]);"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "0.01|10"
+    }
+    Block {
+      BlockType		      TransferFcn
+      Name		      "一阶系统2"
+      Position		      [120, 240, 190, 290]
+      FontName		      "宋体"
+      FontSize		      12
+      Numerator		      "[1]"
+      Denominator	      "[R*C 1]"
+      MaskType		      "积分"
+      MaskDescription	      "积分"
+      MaskPromptString	      "电容量（法）：|电阻值（欧姆）："
+      MaskStyleString	      "edit,edit"
+      MaskTunableValueString  "on,on"
+      MaskCallbackString      "|"
+      MaskEnableString	      "on,on"
+      MaskVisibilityString    "on,on"
+      MaskInitialization      "C=@1;R=@2;"
+      MaskDisplay	      "plot([0 2 2 2],[2 2 1.5 2.5],[2 6],[2.5 2.5],[2"
+" 6],[1.5 1.5],[6 6],[2.5 1.5],[6 11],[2 2],[8 8 6 10],[2 0 0 0],[6 10],[-1 -1"
+"],[8 8 7 9],[-1 -3 -3 -3]);"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "0.01|10"
+    }
+    Line {
+      SrcBlock		      "方波信号"
+      SrcPort		      1
+      Points		      [15, 0]
+      Branch {
+	DstBlock		"一阶系统1"
+	DstPort			1
+      }
+      Branch {
+	Points			[0, 0]
+	Branch {
+	  Points		  [0, 40]
+	  Branch {
+	    Points		    [0, 60]
+	    DstBlock		    "一阶系统2"
+	    DstPort		    1
+	  }
+	  Branch {
+	    DstBlock		    "频谱分析仪2\n（系统2的频谱）"
+	    DstPort		    1
+	  }
+	}
+	Branch {
+	  Points		  [0, -60]
+	  Branch {
+	    Points		    [0, -30]
+	    DstBlock		    "示波器\n（输入信号）"
+	    DstPort		    1
+	  }
+	  Branch {
+	    DstBlock		    "频谱分析仪1\n（系统1的频谱）"
+	    DstPort		    1
+	  }
+	}
+      }
+    }
+    Line {
+      SrcBlock		      "一阶系统2"
+      SrcPort		      1
+      Points		      [15, 0]
+      Branch {
+	DstBlock		"示波器\n（系统2的响应）"
+	DstPort			1
+      }
+      Branch {
+	Points			[0, -40]
+	DstBlock		"频谱分析仪2\n（系统2的频谱）"
+	DstPort			2
+      }
+    }
+    Line {
+      SrcBlock		      "一阶系统1"
+      SrcPort		      1
+      Points		      [10, 0]
+      Branch {
+	DstBlock		"示波器\n（系统1的响应）"
+	DstPort			1
+      }
+      Branch {
+	Points			[0, -40]
+	DstBlock		"频谱分析仪1\n（系统1的频谱）"
+	DstPort			2
+      }
+    }
+    Annotation {
+      Position		      [122, 27]
+      VerticalAlignment	      "top"
+      ForegroundColor	      "blue"
+      Text		      "一阶系统的时域特性"
+      FontName		      "楷体_GB2312"
+      FontSize		      16
+      FontWeight	      "bold"
+      FontAngle		      "italic"
+    }
+  }
+}

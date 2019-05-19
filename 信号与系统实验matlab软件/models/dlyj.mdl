@@ -1,0 +1,586 @@
+Model {
+  Name			  "dlyj"
+  Version		  2.20
+  SimParamPage		  Solver
+  SampleTimeColors	  off
+  InvariantConstants	  off
+  WideVectorLines	  off
+  ShowLineWidths	  off
+  StartTime		  "0.0"
+  StopTime		  "10.0"
+  Solver		  ode45
+  RelTol		  "1e-3"
+  AbsTol		  "1e-6"
+  Refine		  "1"
+  MaxStep		  "auto"
+  InitialStep		  "auto"
+  FixedStep		  "auto"
+  MaxOrder		  5
+  OutputOption		  RefineOutputTimes
+  OutputTimes		  "[]"
+  LoadExternalInput	  off
+  ExternalInput		  "[t, u]"
+  SaveTime		  on
+  TimeSaveName		  "tout"
+  SaveState		  off
+  StateSaveName		  "xout"
+  SaveOutput		  on
+  OutputSaveName	  "yout"
+  LoadInitialState	  off
+  InitialState		  "xInitial"
+  SaveFinalState	  off
+  FinalStateName	  "xFinal"
+  LimitMaxRows		  off
+  MaxRows		  "1000"
+  Decimation		  "1"
+  AlgebraicLoopMsg	  warning
+  MinStepSizeMsg	  warning
+  UnconnectedInputMsg	  warning
+  UnconnectedOutputMsg	  warning
+  UnconnectedLineMsg	  warning
+  ConsistencyChecking	  off
+  ZeroCross		  on
+  SimulationMode	  normal
+  RTWSystemTargetFile	  "grt.tlc"
+  RTWInlineParameters	  off
+  RTWPlaceOutputsASAP	  off
+  RTWRetainRTWFile	  off
+  RTWTemplateMakefile	  "grt_vc.tmf"
+  RTWMakeCommand	  "make_rtw"
+  RTWGenerateCodeOnly	  off
+  ExtModeMexFile	  "ext_comm"
+  ExtModeBatchMode	  off
+  BlockDefaults {
+    Orientation		    right
+    ForegroundColor	    black
+    BackgroundColor	    white
+    DropShadow		    off
+    NamePlacement	    normal
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    normal
+    FontAngle		    normal
+    ShowName		    on
+  }
+  AnnotationDefaults {
+    HorizontalAlignment	    center
+    VerticalAlignment	    middle
+    ForegroundColor	    black
+    BackgroundColor	    white
+    DropShadow		    off
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    normal
+    FontAngle		    normal
+  }
+  LineDefaults {
+    FontName		    "Helvetica"
+    FontSize		    9
+    FontWeight		    normal
+    FontAngle		    normal
+  }
+  System {
+    Name		    "dlyj"
+    Location		    [73, 130, 599, 435]
+    Open		    on
+    ToolBar		    off
+    StatusBar		    off
+    ScreenColor		    white
+    PaperOrientation	    landscape
+    PaperPositionMode	    auto
+    PaperType		    usletter
+    PaperUnits		    inches
+    Block {
+      BlockType		      Gain
+      Name		      "   反向器"
+      Position		      [210, 215, 240, 245]
+      Orientation	      left
+      FontName		      "宋体"
+      FontSize		      12
+      Gain		      "-1"
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "方波信号"
+      Ports		      [0, 1, 0, 0, 0]
+      Position		      [45, 103, 90, 147]
+      FontName		      "宋体"
+      FontSize		      12
+      ShowPortLabels	      off
+      MaskType		      "Pulse Generator"
+      MaskDescription	      "Pulse Generator."
+      MaskHelp		      "Pulse generator which ensures pulse\\ntransitio"
+"ns are hit. Provides a vector of pulses when the height is entered as a vecto"
+"r.\\nUnmask to see how it works."
+      MaskPromptString	      "Pulse period (secs):|Pulse width:|Pulse height:"
+"|Pulse start time:"
+      MaskStyleString	      "edit,edit,edit,edit"
+      MaskTunableValueString  "on,on,on,on"
+      MaskInitialization      "Ts=@1; du=@2; ht=@3; stt=@4; ini=ones(length(ht"
+"),1); st1=rem(stt,Ts); st2=rem(stt+du,Ts);if(Ts<=1.2*du),ini=zeros(length(ht)"
+",1);end;"
+      MaskDisplay	      "plot(0,0,100,100,[90,75,75,60,60,35,35,20,20,10"
+"],[20,20,80,80,20,20,80,80,20,20])"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      none
+      MaskIconUnits	      autoscale
+      MaskValueString	      "20|20|1|1"
+      System {
+	Name			"方波信号"
+	Location		[158, 441, 759, 682]
+	Open			off
+	ToolBar			off
+	StatusBar		off
+	ScreenColor		white
+	PaperOrientation	landscape
+	PaperPositionMode	auto
+	PaperType		usletter
+	PaperUnits		inches
+	Block {
+	  BlockType		  Clock
+	  Name			  "Clock1"
+	  Position		  [295, 100, 315, 120]
+	  ShowName		  off
+	  Location		  [30, 40, 140, 75]
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "Constant"
+	  Position		  [25, 30, 45, 50]
+	  Value			  "1"
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "Constant1"
+	  Position		  [295, 149, 320, 171]
+	  Value			  "stt"
+	}
+	Block {
+	  BlockType		  Gain
+	  Name			  "Gain"
+	  Position		  [510, 102, 535, 128]
+	  ShowName		  off
+	  Gain			  "ht"
+	}
+	Block {
+	  BlockType		  Logic
+	  Name			  "Logical\nOperator"
+	  Ports			  [2, 1, 0, 0, 0]
+	  Position		  [285, 38, 315, 62]
+	  Operator		  XOR
+	  Inputs		  "2"
+	}
+	Block {
+	  BlockType		  Logic
+	  Name			  "Logical\nOperator1"
+	  Ports			  [1, 1, 0, 0, 0]
+	  Position		  [355, 38, 385, 62]
+	  Operator		  NOT
+	  Inputs		  "1"
+	}
+	Block {
+	  BlockType		  Product
+	  Name			  "Product"
+	  Ports			  [2, 1, 0, 0, 0]
+	  Position		  [455, 105, 480, 125]
+	  ShowName		  off
+	  Inputs		  "2"
+	}
+	Block {
+	  BlockType		  RelationalOperator
+	  Name			  "Relational\noperator"
+	  Position		  [370, 102, 400, 133]
+	  ShowName		  off
+	  Operator		  ">="
+	}
+	Block {
+	  BlockType		  Sum
+	  Name			  "Sum"
+	  Ports			  [2, 1, 0, 0, 0]
+	  Position		  [135, 35, 155, 55]
+	  ShowName		  off
+	  Inputs		  "+-"
+	}
+	Block {
+	  BlockType		  Sum
+	  Name			  "Sum1"
+	  Ports			  [2, 1, 0, 0, 0]
+	  Position		  [130, 120, 150, 140]
+	  ShowName		  off
+	  Inputs		  "+-"
+	}
+	Block {
+	  BlockType		  UnitDelay
+	  Name			  "Unit Delay"
+	  Position		  [145, 75, 195, 95]
+	  Orientation		  left
+	  X0			  "0"
+	  SampleTime		  "[Ts,st1]"
+	}
+	Block {
+	  BlockType		  UnitDelay
+	  Name			  "Unit Delay1"
+	  Position		  [140, 165, 190, 185]
+	  Orientation		  left
+	  X0			  "ini"
+	  SampleTime		  "[Ts,st2]"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "out_1"
+	  Position		  [560, 105, 580, 125]
+	  ShowName		  off
+	  Port			  "1"
+	  OutputWhenDisabled	  held
+	  InitialOutput		  "[]"
+	}
+	Line {
+	  SrcBlock		  "Unit Delay1"
+	  SrcPort		  1
+	  Points		  [-35, 0; 0, -40]
+	  DstBlock		  "Sum1"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Sum1"
+	  SrcPort		  1
+	  Points		  [0, 0]
+	  Branch {
+	    Points		    [90, 0; 0, -75]
+	    DstBlock		    "Logical\nOperator"
+	    DstPort		    2
+	  }
+	  Branch {
+	    Points		    [55, 0; 0, 45]
+	    DstBlock		    "Unit Delay1"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "Constant"
+	  SrcPort		  1
+	  Points		  [0, 0]
+	  Branch {
+	    Points		    [20, 0; 0, 85]
+	    DstBlock		    "Sum1"
+	    DstPort		    1
+	  }
+	  Branch {
+	    DstBlock		    "Sum"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "Sum"
+	  SrcPort		  1
+	  Points		  [0, 0]
+	  Branch {
+	    DstBlock		    "Logical\nOperator"
+	    DstPort		    1
+	  }
+	  Branch {
+	    Points		    [70, 0; 0, 40]
+	    DstBlock		    "Unit Delay"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "Unit Delay"
+	  SrcPort		  1
+	  Points		  [-35, 0; 0, -35]
+	  DstBlock		  "Sum"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Clock1"
+	  SrcPort		  1
+	  DstBlock		  "Relational\noperator"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Relational\noperator"
+	  SrcPort		  1
+	  DstBlock		  "Product"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Product"
+	  SrcPort		  1
+	  DstBlock		  "Gain"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Gain"
+	  SrcPort		  1
+	  DstBlock		  "out_1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Constant1"
+	  SrcPort		  1
+	  Points		  [20, 0; 0, -35]
+	  DstBlock		  "Relational\noperator"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Logical\nOperator"
+	  SrcPort		  1
+	  DstBlock		  "Logical\nOperator1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Logical\nOperator1"
+	  SrcPort		  1
+	  Points		  [40, 0; 0, 60]
+	  DstBlock		  "Product"
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      Gain
+      Name		      "放大器"
+      Position		      [220, 120, 250, 150]
+      FontName		      "宋体"
+      FontSize		      12
+      Gain		      "5"
+    }
+    Block {
+      BlockType		      Integrator
+      Name		      "积分器"
+      Ports		      [1, 1, 0, 0, 0]
+      Position		      [320, 120, 350, 150]
+      FontName		      "宋体"
+      FontSize		      12
+      ExternalReset	      none
+      InitialConditionSource  internal
+      InitialCondition	      "0"
+      LimitOutput	      off
+      UpperSaturationLimit    "inf"
+      LowerSaturationLimit    "-inf"
+      ShowSaturationPort      off
+      ShowStatePort	      off
+      AbsoluteTolerance	      "auto"
+    }
+    Block {
+      BlockType		      Sum
+      Name		      "加法器"
+      Ports		      [2, 1, 0, 0, 0]
+      Position		      [145, 117, 175, 148]
+      FontName		      "宋体"
+      FontSize		      12
+      Inputs		      "++"
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "频谱分析仪1\n（系统1的频谱）"
+      Ports		      [2, 0, 0, 0, 0]
+      Position		      [455, 48, 490, 97]
+      DropShadow	      on
+      FontName		      "宋体"
+      FontSize		      12
+      ShowPortLabels	      off
+      MaskType		      "Spectrum analyzer."
+      MaskDescription	      "Spectrum analyser using graph window.\nHook inp"
+"ut 1 to system input.\nHook input 2 to system output."
+      MaskHelp		      "Hook the system's input to the first port of th"
+"is block and the system's output to second port. Results are displayed as the"
+" frequency response of this system. Use signals with high harmonic content fo"
+"r best results. "
+      MaskPromptString	      "Length of buffer:|Number of points for fft:|Plo"
+"t after how many points:|Sample time:"
+      MaskStyleString	      "edit,edit,edit,edit"
+      MaskTunableValueString  "on,on,on,on"
+      MaskInitialization      "npts=@1; fftpts=@2; HowOften=@3; ts=@4(1); if l"
+"ength(@4) > 1, offset = @4(2), else, offset = 0; end"
+      MaskDisplay	      "plot(0,0,100,100,[11,93,93,11,11],[90,90,40,40,"
+"90],[90,80,72,64,55,45,41,36,20],[50,50,52,59,67,75,78,80,80])"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      none
+      MaskIconUnits	      autoscale
+      MaskValueString	      "512|1024|100|0.05"
+      System {
+	Name			"频谱分析仪1\n（系统1的频谱）"
+	Location		[0, 0, 371, 185]
+	Open			off
+	ToolBar			off
+	StatusBar		off
+	ScreenColor		white
+	PaperOrientation	landscape
+	PaperPositionMode	auto
+	PaperType		usletter
+	PaperUnits		inches
+	Block {
+	  BlockType		  Inport
+	  Name			  "system input"
+	  Position		  [55, 30, 75, 50]
+	  Port			  "1"
+	  PortWidth		  "-1"
+	  SampleTime		  "-1"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "system output"
+	  Position		  [55, 110, 75, 130]
+	  Port			  "2"
+	  PortWidth		  "-1"
+	  SampleTime		  "-1"
+	}
+	Block {
+	  BlockType		  Mux
+	  Name			  "Mux"
+	  Ports			  [2, 1, 0, 0, 0]
+	  Position		  [145, 71, 175, 104]
+	  Inputs		  "2"
+	}
+	Block {
+	  BlockType		  "S-Function"
+	  Name			  "S-function block\nwhich calls M-file"
+	  Ports			  [1, 0, 0, 0, 0]
+	  Position		  [250, 72, 295, 108]
+	  FunctionName		  "sfuntf"
+	  Parameters		  "fftpts,npts,HowOften,offset,ts,0"
+	  PortCounts		  "[]"
+	  SFunctionModules	  "''"
+	}
+	Line {
+	  SrcBlock		  "Mux"
+	  SrcPort		  1
+	  DstBlock		  "S-function block\nwhich calls M-file"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "system input"
+	  SrcPort		  1
+	  Points		  [30, 0; 0, 40]
+	  DstBlock		  "Mux"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "system output"
+	  SrcPort		  1
+	  Points		  [30, 0; 0, -25]
+	  DstBlock		  "Mux"
+	  DstPort		  2
+	}
+      }
+    }
+    Block {
+      BlockType		      Scope
+      Name		      "示波器1"
+      Ports		      [1, 0, 0, 0, 0]
+      Position		      [160, 4, 200, 36]
+      FontName		      "宋体"
+      FontSize		      12
+      Floating		      off
+      Location		      [419, 34, 743, 273]
+      Open		      on
+      Grid		      on
+      TickLabels	      on
+      ZoomMode		      on
+      TimeRange		      "auto"
+      YMin		      "-5"
+      YMax		      "5"
+      SaveToWorkspace	      off
+      SaveName		      "ScopeData"
+      LimitMaxRows	      on
+      MaxRows		      "5000"
+      Decimation	      "1"
+      SampleInput	      off
+      SampleTime	      "0"
+    }
+    Block {
+      BlockType		      Scope
+      Name		      "示波器2"
+      Ports		      [1, 0, 0, 0, 0]
+      Position		      [465, 180, 495, 210]
+      FontName		      "宋体"
+      FontSize		      12
+      Floating		      off
+      Location		      [407, 302, 731, 541]
+      Open		      on
+      Grid		      on
+      TickLabels	      on
+      ZoomMode		      xonly
+      TimeRange		      "auto"
+      YMin		      "-5"
+      YMax		      "5"
+      SaveToWorkspace	      off
+      SaveName		      "ScopeData"
+      LimitMaxRows	      on
+      MaxRows		      "5000"
+      Decimation	      "1"
+      SampleInput	      off
+      SampleTime	      "0"
+    }
+    Line {
+      SrcBlock		      "   反向器"
+      SrcPort		      1
+      Points		      [-94, 0; 0, -90]
+      DstBlock		      "加法器"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "积分器"
+      SrcPort		      1
+      Points		      [30, 0]
+      Branch {
+	Points			[0, -50]
+	DstBlock		"频谱分析仪1\n（系统1的频谱）"
+	DstPort			2
+      }
+      Branch {
+	Points			[0, 95]
+	DstBlock		"   反向器"
+	DstPort			1
+      }
+      Branch {
+	Points			[65, 0]
+	DstBlock		"示波器2"
+	DstPort			1
+      }
+    }
+    Line {
+      SrcBlock		      "方波信号"
+      SrcPort		      1
+      Points		      [15, 0]
+      Branch {
+	Points			[0, -45]
+	Branch {
+	  Points		  [0, -5]
+	  Branch {
+	    Points		    [0, -15]
+	    DstBlock		    "频谱分析仪1\n（系统1的频谱）"
+	    DstPort		    1
+	  }
+	  Branch {
+	    Points		    [0, -55]
+	    DstBlock		    "示波器1"
+	    DstPort		    1
+	  }
+	}
+	Branch {
+	  Points		  [3, 0]
+	}
+      }
+      Branch {
+	DstBlock		"加法器"
+	DstPort			1
+      }
+    }
+    Line {
+      SrcBlock		      "放大器"
+      SrcPort		      1
+      DstBlock		      "积分器"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "加法器"
+      SrcPort		      1
+      DstBlock		      "放大器"
+      DstPort		      1
+    }
+  }
+}

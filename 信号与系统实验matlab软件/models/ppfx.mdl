@@ -1,0 +1,357 @@
+Model {
+  Name			  "ppfx"
+  Version		  3.00
+  SimParamPage		  "Solver"
+  SampleTimeColors	  off
+  InvariantConstants	  off
+  WideVectorLines	  off
+  ShowLineWidths	  off
+  ShowPortDataTypes	  off
+  StartTime		  "0.0"
+  StopTime		  "40"
+  SolverMode		  "Auto"
+  Solver		  "ode45"
+  RelTol		  "1e-3"
+  AbsTol		  "1e-3"
+  Refine		  "1"
+  MaxStep		  "0.01"
+  InitialStep		  "auto"
+  FixedStep		  "auto"
+  MaxOrder		  5
+  OutputOption		  "RefineOutputTimes"
+  OutputTimes		  "[]"
+  LoadExternalInput	  off
+  ExternalInput		  "[t, u]"
+  SaveTime		  off
+  TimeSaveName		  "tout"
+  SaveState		  off
+  StateSaveName		  "xout"
+  SaveOutput		  off
+  OutputSaveName	  "yout"
+  LoadInitialState	  off
+  InitialState		  "xInitial"
+  SaveFinalState	  off
+  FinalStateName	  "xFinal"
+  SaveFormat		  "Matrix"
+  LimitMaxRows		  off
+  MaxRows		  "1000"
+  Decimation		  "1"
+  AlgebraicLoopMsg	  "warning"
+  MinStepSizeMsg	  "warning"
+  UnconnectedInputMsg	  "warning"
+  UnconnectedOutputMsg	  "warning"
+  UnconnectedLineMsg	  "warning"
+  InheritedTsInSrcMsg	  "warning"
+  IntegerOverflowMsg	  "warning"
+  UnnecessaryDatatypeConvMsg "none"
+  Int32ToFloatConvMsg	  "warning"
+  SignalLabelMismatchMsg  "none"
+  ConsistencyChecking	  "off"
+  ZeroCross		  on
+  SimulationMode	  "normal"
+  BlockDataTips		  on
+  BlockParametersDataTip  on
+  BlockAttributesDataTip  off
+  BlockPortWidthsDataTip  off
+  BlockDescriptionStringDataTip	off
+  BlockMaskParametersDataTip off
+  ToolBar		  on
+  StatusBar		  on
+  BrowserShowLibraryLinks off
+  BrowserLookUnderMasks	  off
+  OptimizeBlockIOStorage  on
+  BufferReuse		  on
+  BooleanDataType	  off
+  RTWSystemTargetFile	  "grt.tlc"
+  RTWInlineParameters	  off
+  RTWRetainRTWFile	  off
+  RTWTemplateMakefile	  "grt_default_tmf"
+  RTWMakeCommand	  "make_rtw"
+  RTWGenerateCodeOnly	  off
+  ExtModeMexFile	  "ext_comm"
+  ExtModeBatchMode	  off
+  ExtModeTrigType	  "manual"
+  ExtModeTrigMode	  "oneshot"
+  ExtModeTrigPort	  "1"
+  ExtModeTrigElement	  "any"
+  ExtModeTrigDuration	  1000
+  ExtModeTrigHoldOff	  0
+  ExtModeTrigDelay	  0
+  ExtModeTrigDirection	  "rising"
+  ExtModeTrigLevel	  0
+  ExtModeArchiveMode	  "off"
+  ExtModeAutoIncOneShot	  off
+  ExtModeIncDirWhenArm	  off
+  ExtModeAddSuffixToVar	  off
+  ExtModeWriteAllDataToWs off
+  ExtModeArmWhenConnect	  off
+  Created		  "Wed Jan 05 20:48:46 2000"
+  UpdateHistory		  "UpdateHistoryNever"
+  ModifiedByFormat	  "%<Auto>"
+  ModifiedDateFormat	  "%<Auto>"
+  LastModifiedDate	  "Wed Jan 05 20:57:26 2000"
+  ModelVersionFormat	  "1.%<AutoIncrement:1>"
+  ConfigurationManager	  "none"
+  BlockDefaults {
+    Orientation		    "right"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    NamePlacement	    "normal"
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+    ShowName		    on
+  }
+  AnnotationDefaults {
+    HorizontalAlignment	    "center"
+    VerticalAlignment	    "middle"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+  }
+  LineDefaults {
+    FontName		    "Helvetica"
+    FontSize		    9
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+  }
+  System {
+    Name		    "ppfx"
+    Location		    [248, 266, 661, 526]
+    Open		    on
+    ModelBrowserVisibility  off
+    ModelBrowserWidth	    200
+    ScreenColor		    "automatic"
+    PaperOrientation	    "landscape"
+    PaperPositionMode	    "auto"
+    PaperType		    "usletter"
+    PaperUnits		    "inches"
+    ZoomFactor		    "100"
+    AutoZoom		    off
+    ReportName		    "simulink-default.rpt"
+    Block {
+      BlockType		      ZeroPole
+      Name		      "  巴特沃斯低通\n  滤波器"
+      Position		      [145, 138, 205, 182]
+      FontName		      "宋体"
+      FontSize		      12
+      Zeros		      "z"
+      Poles		      "p"
+      Gain		      "k"
+      MaskType		      "buttap"
+      MaskDescription	      "Analog Butterworth low pass filter.\n\n(Require"
+"s Signal Processing Toolbox)"
+      MaskHelp		      "Butterworth low pass filter using MATLAB's butt"
+"er command."
+      MaskPromptString	      "Cutoff frequency (rad/sec)|Order"
+      MaskStyleString	      "edit,edit"
+      MaskTunableValueString  "on,on"
+      MaskCallbackString      "|"
+      MaskEnableString	      "on,on"
+      MaskVisibilityString    "on,on"
+      MaskInitialization      "[z,p,k]=buttap(@2); z=@1*z; p=@1*p; k=real(prod"
+"(-p)); [num,den]=zp2tf(z,p,k); w=logspace(log10(@1/10),log10(10*@1),20); h=fr"
+"eqs(num,den,w); "
+      MaskDisplay	      "plot(20*log10(w),20*log10(abs(h)))"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "200|4"
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "频谱分析"
+      Ports		      [1, 0, 0, 0, 0]
+      Position		      [300, 105, 330, 145]
+      DropShadow	      on
+      CopyFcn		      "ssfunpsd([],[],[],'CopyBlock')"
+      DeleteFcn		      "ssfunpsd([],[],[],'DeleteBlock')"
+      LoadFcn		      "ssfunpsd([],[],[],'LoadBlock')"
+      StartFcn		      "ssfunpsd([],[],[],'Start')"
+      NameChangeFcn	      "ssfunpsd([],[],[],'NameChange')"
+      FontName		      "宋体"
+      FontSize		      12
+      ShowPortLabels	      off
+      MaskType		      "Spectrum analyzer."
+      MaskDescription	      "Spectrum analyser using graph window."
+      MaskHelp		      "This block when hooked to the output of a syste"
+"m displays the frequency content of the buffer in the graph window. For more "
+"see the M-file specanal."
+      MaskPromptString	      "Length of buffer:|Number of points for fft:|Plo"
+"t after how many points:|Sample time:"
+      MaskStyleString	      "edit,edit,edit,edit"
+      MaskTunableValueString  "on,on,on,on"
+      MaskCallbackString      "|||"
+      MaskEnableString	      "on,on,on,on"
+      MaskVisibilityString    "on,on,on,on"
+      MaskInitialization      "npts=@1; fftpts=@2; HowOften=@3; ts=@4(1); if l"
+"ength(@4) > 1, offset = @4(2), else, offset = 0; end"
+      MaskDisplay	      "plot(0,0,100,100,[14,91,91,14,14],[86,86,40,40,"
+"86],[85,82,80,79,75,67,63,60,57,53,41,36,33,27,24],[49,50,53,50,49,51,54,66,5"
+"4,50,50,52,81,51,49])"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "256|512|64|0.1"
+      System {
+	Name			"频谱分析"
+	Location		[4, 107, 280, 247]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"automatic"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+	AutoZoom		on
+	Block {
+	  BlockType		  Inport
+	  Name			  "input signal"
+	  Position		  [50, 55, 70, 75]
+	  Port			  "1"
+	  PortWidth		  "-1"
+	  SampleTime		  "-1"
+	  DataType		  "auto"
+	  SignalType		  "auto"
+	  Interpolate		  on
+	}
+	Block {
+	  BlockType		  "S-Function"
+	  Name			  "S-function block \nwhich calls M-file"
+	  Ports			  [1, 0, 0, 0, 0]
+	  Position		  [160, 46, 210, 84]
+	  FunctionName		  "ssfunpsd"
+	  Parameters		  "fftpts,npts,HowOften,offset,ts,0"
+	  PortCounts		  "[]"
+	  SFunctionModules	  "''"
+	}
+	Line {
+	  SrcBlock		  "input signal"
+	  SrcPort		  1
+	  DstBlock		  "S-function block \nwhich calls M-file"
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      Scope
+      Name		      "示波器\n（输出信号）"
+      Ports		      [1, 0, 0, 0, 0]
+      Position		      [300, 177, 330, 213]
+      FontName		      "宋体"
+      FontSize		      12
+      Floating		      off
+      Location		      [6, 384, 338, 546]
+      Open		      off
+      NumInputPorts	      "1"
+      TickLabels	      "OneTimeTick"
+      ZoomMode		      "on"
+      List {
+	ListType		AxesTitles
+	axes1			"%<SignalLabel>"
+      }
+      Grid		      "on"
+      TimeRange		      "30.000000"
+      YMin		      "-1.5"
+      YMax		      "1.5"
+      SaveToWorkspace	      off
+      SaveName		      "ScopeData"
+      DataFormat	      "Matrix"
+      LimitMaxRows	      on
+      MaxRows		      "5000"
+      Decimation	      "1"
+      SampleInput	      off
+      SampleTime	      "0"
+    }
+    Block {
+      BlockType		      Scope
+      Name		      "示波器\n（输入信号）"
+      Ports		      [1, 0, 0, 0, 0]
+      Position		      [300, 32, 330, 68]
+      FontName		      "宋体"
+      FontSize		      12
+      Floating		      off
+      Location		      [369, 528, 701, 679]
+      Open		      off
+      NumInputPorts	      "1"
+      TickLabels	      "OneTimeTick"
+      ZoomMode		      "on"
+      List {
+	ListType		AxesTitles
+	axes1			"%<SignalLabel>"
+      }
+      Grid		      "on"
+      TimeRange		      "30.000000"
+      YMin		      "-1.5"
+      YMax		      "1.5"
+      SaveToWorkspace	      off
+      SaveName		      "ScopeData"
+      DataFormat	      "Matrix"
+      LimitMaxRows	      on
+      MaxRows		      "5000"
+      Decimation	      "1"
+      SampleInput	      off
+      SampleTime	      "0"
+    }
+    Block {
+      BlockType		      SignalGenerator
+      Name		      "信号发生器"
+      Position		      [50, 143, 95, 177]
+      FontName		      "宋体"
+      FontSize		      12
+      WaveForm		      "square"
+      Amplitude		      "1.000000"
+      Frequency		      "5.000000"
+      Units		      "rad/sec"
+    }
+    Line {
+      SrcBlock		      "  巴特沃斯低通\n  滤波器"
+      SrcPort		      1
+      Points		      [30, 0]
+      Branch {
+	Points			[0, -35]
+	DstBlock		"频谱分析"
+	DstPort			1
+      }
+      Branch {
+	Points			[0, 35]
+	DstBlock		"示波器\n（输出信号）"
+	DstPort			1
+      }
+    }
+    Line {
+      SrcBlock		      "信号发生器"
+      SrcPort		      1
+      Points		      [15, 0]
+      Branch {
+	DstBlock		"  巴特沃斯低通\n  滤波器"
+	DstPort			1
+      }
+      Branch {
+	Points			[0, -110]
+	DstBlock		"示波器\n（输入信号）"
+	DstPort			1
+      }
+    }
+    Annotation {
+      Position		      [82, 17]
+      VerticalAlignment	      "top"
+      ForegroundColor	      "blue"
+      Text		      "频谱分析示例"
+      FontName		      "楷体_GB2312"
+      FontSize		      16
+      FontWeight	      "bold"
+      FontAngle		      "italic"
+    }
+  }
+}

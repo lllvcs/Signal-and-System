@@ -1,0 +1,775 @@
+Model {
+  Name			  "chou_shi"
+  Version		  2.20
+  SimParamPage		  Solver
+  SampleTimeColors	  off
+  InvariantConstants	  off
+  WideVectorLines	  off
+  ShowLineWidths	  off
+  StartTime		  "0.0"
+  StopTime		  "9999"
+  Solver		  ode45
+  RelTol		  "1e-5"
+  AbsTol		  "1e-5"
+  Refine		  "1"
+  MaxStep		  "0.001"
+  InitialStep		  "auto"
+  FixedStep		  "auto"
+  MaxOrder		  5
+  OutputOption		  RefineOutputTimes
+  OutputTimes		  "[]"
+  LoadExternalInput	  off
+  ExternalInput		  "[t, u]"
+  SaveTime		  off
+  TimeSaveName		  "tout"
+  SaveState		  off
+  StateSaveName		  "xout"
+  SaveOutput		  off
+  OutputSaveName	  "yout"
+  LoadInitialState	  off
+  InitialState		  "xInitial"
+  SaveFinalState	  off
+  FinalStateName	  "xFinal"
+  LimitMaxRows		  off
+  MaxRows		  "1000"
+  Decimation		  "1"
+  AlgebraicLoopMsg	  warning
+  MinStepSizeMsg	  warning
+  UnconnectedInputMsg	  warning
+  UnconnectedOutputMsg	  warning
+  UnconnectedLineMsg	  warning
+  ConsistencyChecking	  off
+  ZeroCross		  on
+  SimulationMode	  normal
+  RTWSystemTargetFile	  "grt.tlc"
+  RTWInlineParameters	  off
+  RTWPlaceOutputsASAP	  off
+  RTWRetainRTWFile	  off
+  RTWTemplateMakefile	  "grt_default_tmf"
+  RTWMakeCommand	  "make_rtw"
+  RTWGenerateCodeOnly	  off
+  ExtModeMexFile	  "ext_comm"
+  ExtModeBatchMode	  off
+  BlockDefaults {
+    Orientation		    right
+    ForegroundColor	    black
+    BackgroundColor	    white
+    DropShadow		    off
+    NamePlacement	    normal
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    normal
+    FontAngle		    normal
+    ShowName		    on
+  }
+  AnnotationDefaults {
+    HorizontalAlignment	    center
+    VerticalAlignment	    middle
+    ForegroundColor	    black
+    BackgroundColor	    white
+    DropShadow		    off
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    normal
+    FontAngle		    normal
+  }
+  LineDefaults {
+    FontName		    "Helvetica"
+    FontSize		    9
+    FontWeight		    normal
+    FontAngle		    normal
+  }
+  System {
+    Name		    "chou_shi"
+    Location		    [8, 84, 627, 498]
+    Open		    on
+    ToolBar		    on
+    StatusBar		    on
+    ScreenColor		    white
+    PaperOrientation	    landscape
+    PaperPositionMode	    auto
+    PaperType		    usletter
+    PaperUnits		    inches
+    Block {
+      BlockType		      ZeroPole
+      Name		      "°ÍÌØÎÖË¹\nµÍÍ¨ÂË²¨Æ÷1"
+      Position		      [175, 118, 235, 162]
+      FontName		      "Arial"
+      FontSize		      11
+      Zeros		      "z"
+      Poles		      "p"
+      Gain		      "k"
+      MaskType		      "buttap"
+      MaskDescription	      "Analog Butterworth low pass filter.\n\n(Require"
+"s Signal Processing Toolbox)"
+      MaskHelp		      "Butterworth low pass filter using MATLAB's butt"
+"er command."
+      MaskPromptString	      "Cutoff frequency (rad/sec)|Order"
+      MaskStyleString	      "edit,edit"
+      MaskTunableValueString  "on,on"
+      MaskInitialization      "[z,p,k]=buttap(@2); z=@1*z; p=@1*p; k=real(prod"
+"(-p)); [num,den]=zp2tf(z,p,k); w=logspace(log10(@1/10),log10(10*@1),20); h=fr"
+"eqs(num,den,w); "
+      MaskDisplay	      "plot(20*log10(w),20*log10(abs(h)))"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      none
+      MaskIconUnits	      autoscale
+      MaskValueString	      "60|4"
+    }
+    Block {
+      BlockType		      ZeroPole
+      Name		      "°ÍÌØÎÖË¹\nµÍÍ¨ÂË²¨Æ÷2"
+      Position		      [410, 193, 470, 237]
+      FontName		      "Arial"
+      FontSize		      11
+      Zeros		      "z"
+      Poles		      "p"
+      Gain		      "k"
+      MaskType		      "buttap"
+      MaskDescription	      "Analog Butterworth low pass filter.\n\n(Require"
+"s Signal Processing Toolbox)"
+      MaskHelp		      "Butterworth low pass filter using MATLAB's butt"
+"er command."
+      MaskPromptString	      "Cutoff frequency (rad/sec)|Order"
+      MaskStyleString	      "edit,edit"
+      MaskTunableValueString  "on,on"
+      MaskInitialization      "[z,p,k]=buttap(@2); z=@1*z; p=@1*p; k=real(prod"
+"(-p)); [num,den]=zp2tf(z,p,k); w=logspace(log10(@1/10),log10(10*@1),20); h=fr"
+"eqs(num,den,w); "
+      MaskDisplay	      "plot(20*log10(w),20*log10(abs(h)))"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      none
+      MaskIconUnits	      autoscale
+      MaskValueString	      "60|4"
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "³Ë·¨Æ÷"
+      Ports		      [2, 1, 0, 0, 0]
+      Position		      [320, 204, 340, 226]
+      FontName		      "Arial"
+      FontSize		      11
+      ShowPortLabels	      off
+      MaskType		      "Dot Product"
+      MaskDescription	      "Inner (dot) product.\ny=sum(u1.*u2)"
+      MaskHelp		      "Computes the inner (dot) product of the inputs:"
+" sum(u1.*u2).  The inputs are vectors of the same length. Output is a scalar."
+      MaskDisplay	      "disp('X')"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      none
+      MaskIconUnits	      autoscale
+      System {
+	Name			"³Ë·¨Æ÷"
+	Location		[33, 479, 253, 634]
+	Open			off
+	ToolBar			off
+	StatusBar		off
+	ScreenColor		white
+	PaperOrientation	landscape
+	PaperPositionMode	auto
+	PaperType		usletter
+	PaperUnits		inches
+	Block {
+	  BlockType		  Inport
+	  Name			  "in_1"
+	  Position		  [15, 25, 35, 45]
+	  Port			  "1"
+	  PortWidth		  "-1"
+	  SampleTime		  "-1"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "in_2"
+	  Position		  [15, 90, 35, 110]
+	  Port			  "2"
+	  PortWidth		  "-1"
+	  SampleTime		  "-1"
+	}
+	Block {
+	  BlockType		  Product
+	  Name			  "Product"
+	  Ports			  [2, 1, 0, 0, 0]
+	  Position		  [65, 55, 90, 75]
+	  Inputs		  "2"
+	}
+	Block {
+	  BlockType		  Sum
+	  Name			  "Sum"
+	  Ports			  [1, 1, 0, 0, 0]
+	  Position		  [125, 55, 145, 75]
+	  Inputs		  "+"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "out_1"
+	  Position		  [185, 55, 205, 75]
+	  Port			  "1"
+	  OutputWhenDisabled	  held
+	  InitialOutput		  "[]"
+	}
+	Line {
+	  SrcBlock		  "in_2"
+	  SrcPort		  1
+	  DstBlock		  "Product"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "in_1"
+	  SrcPort		  1
+	  DstBlock		  "Product"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Product"
+	  SrcPort		  1
+	  DstBlock		  "Sum"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Sum"
+	  SrcPort		  1
+	  DstBlock		  "out_1"
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "³éÑùÂö³å\n£¨³éÑùº¯Êý£©"
+      Ports		      [0, 1, 0, 0, 0]
+      Position		      [55, 257, 100, 293]
+      FontName		      "Arial"
+      FontSize		      11
+      ShowPortLabels	      off
+      MaskType		      "Pulse Generator"
+      MaskDescription	      "Pulse Generator."
+      MaskHelp		      "Pulse generator which ensures pulse\\ntransitio"
+"ns are hit. Provides a vector of pulses when the height is entered as a vecto"
+"r.\\nUnmask to see how it works."
+      MaskPromptString	      "Pulse period (secs):|Pulse width:|Pulse height:"
+"|Pulse start time:"
+      MaskStyleString	      "edit,edit,edit,edit"
+      MaskTunableValueString  "on,on,on,on"
+      MaskInitialization      "Ts=@1; du=@2; ht=@3; stt=@4; ini=ones(length(ht"
+"),1); st1=rem(stt,Ts); st2=rem(stt+du,Ts);if(Ts<=1.2*du),ini=zeros(length(ht)"
+",1);end;"
+      MaskDisplay	      "plot(0,0,100,100,[90,75,75,60,60,35,35,20,20,10"
+"],[20,20,80,80,20,20,80,80,20,20])"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      none
+      MaskIconUnits	      autoscale
+      MaskValueString	      "pi/100|0.001|5|0.0005"
+      System {
+	Name			"³éÑùÂö³å\n£¨³éÑùº¯Êý£©"
+	Location		[158, 441, 759, 682]
+	Open			off
+	ToolBar			off
+	StatusBar		off
+	ScreenColor		white
+	PaperOrientation	landscape
+	PaperPositionMode	auto
+	PaperType		usletter
+	PaperUnits		inches
+	Block {
+	  BlockType		  Clock
+	  Name			  "Clock1"
+	  Position		  [295, 100, 315, 120]
+	  ShowName		  off
+	  Location		  [30, 40, 140, 75]
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "Constant"
+	  Position		  [25, 30, 45, 50]
+	  Value			  "1"
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "Constant1"
+	  Position		  [295, 149, 320, 171]
+	  Value			  "stt"
+	}
+	Block {
+	  BlockType		  Gain
+	  Name			  "Gain"
+	  Position		  [510, 102, 535, 128]
+	  ShowName		  off
+	  Gain			  "ht"
+	}
+	Block {
+	  BlockType		  Logic
+	  Name			  "Logical\nOperator"
+	  Ports			  [2, 1, 0, 0, 0]
+	  Position		  [285, 38, 315, 62]
+	  Operator		  XOR
+	  Inputs		  "2"
+	}
+	Block {
+	  BlockType		  Logic
+	  Name			  "Logical\nOperator1"
+	  Ports			  [1, 1, 0, 0, 0]
+	  Position		  [355, 38, 385, 62]
+	  Operator		  NOT
+	  Inputs		  "1"
+	}
+	Block {
+	  BlockType		  Product
+	  Name			  "Product"
+	  Ports			  [2, 1, 0, 0, 0]
+	  Position		  [455, 105, 480, 125]
+	  ShowName		  off
+	  Inputs		  "2"
+	}
+	Block {
+	  BlockType		  RelationalOperator
+	  Name			  "Relational\noperator"
+	  Position		  [370, 102, 400, 133]
+	  ShowName		  off
+	  Operator		  ">="
+	}
+	Block {
+	  BlockType		  Sum
+	  Name			  "Sum"
+	  Ports			  [2, 1, 0, 0, 0]
+	  Position		  [135, 35, 155, 55]
+	  ShowName		  off
+	  Inputs		  "+-"
+	}
+	Block {
+	  BlockType		  Sum
+	  Name			  "Sum1"
+	  Ports			  [2, 1, 0, 0, 0]
+	  Position		  [130, 120, 150, 140]
+	  ShowName		  off
+	  Inputs		  "+-"
+	}
+	Block {
+	  BlockType		  UnitDelay
+	  Name			  "Unit Delay"
+	  Position		  [145, 75, 195, 95]
+	  Orientation		  left
+	  X0			  "0"
+	  SampleTime		  "[Ts,st1]"
+	}
+	Block {
+	  BlockType		  UnitDelay
+	  Name			  "Unit Delay1"
+	  Position		  [140, 165, 190, 185]
+	  Orientation		  left
+	  X0			  "ini"
+	  SampleTime		  "[Ts,st2]"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "out_1"
+	  Position		  [560, 105, 580, 125]
+	  ShowName		  off
+	  Port			  "1"
+	  OutputWhenDisabled	  held
+	  InitialOutput		  "[]"
+	}
+	Line {
+	  SrcBlock		  "Logical\nOperator1"
+	  SrcPort		  1
+	  Points		  [40, 0; 0, 60]
+	  DstBlock		  "Product"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Logical\nOperator"
+	  SrcPort		  1
+	  DstBlock		  "Logical\nOperator1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Constant1"
+	  SrcPort		  1
+	  Points		  [20, 0; 0, -35]
+	  DstBlock		  "Relational\noperator"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Gain"
+	  SrcPort		  1
+	  DstBlock		  "out_1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Product"
+	  SrcPort		  1
+	  DstBlock		  "Gain"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Relational\noperator"
+	  SrcPort		  1
+	  DstBlock		  "Product"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Clock1"
+	  SrcPort		  1
+	  DstBlock		  "Relational\noperator"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Unit Delay"
+	  SrcPort		  1
+	  Points		  [-35, 0; 0, -35]
+	  DstBlock		  "Sum"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Unit Delay1"
+	  SrcPort		  1
+	  Points		  [-35, 0; 0, -40]
+	  DstBlock		  "Sum1"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Constant"
+	  SrcPort		  1
+	  Points		  [0, 0]
+	  Branch {
+	    DstBlock		    "Sum"
+	    DstPort		    1
+	  }
+	  Branch {
+	    Points		    [20, 0; 0, 85]
+	    DstBlock		    "Sum1"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "Sum"
+	  SrcPort		  1
+	  Points		  [0, 0]
+	  Branch {
+	    Points		    [70, 0; 0, 40]
+	    DstBlock		    "Unit Delay"
+	    DstPort		    1
+	  }
+	  Branch {
+	    DstBlock		    "Logical\nOperator"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "Sum1"
+	  SrcPort		  1
+	  Points		  [0, 0]
+	  Branch {
+	    Points		    [55, 0; 0, 45]
+	    DstBlock		    "Unit Delay1"
+	    DstPort		    1
+	  }
+	  Branch {
+	    Points		    [90, 0; 0, -75]
+	    DstBlock		    "Logical\nOperator"
+	    DstPort		    2
+	  }
+	}
+      }
+    }
+    Block {
+      BlockType		      ToWorkspace
+      Name		      "»·¾³±äÁ¿1"
+      Position		      [515, 57, 565, 73]
+      FontName		      "Arial"
+      FontSize		      11
+      VariableName	      "chou_shi_z1"
+      Buffer		      "4096"
+      Decimation	      "1"
+      SampleTime	      "0.001"
+    }
+    Block {
+      BlockType		      ToWorkspace
+      Name		      "»·¾³±äÁ¿2"
+      Position		      [515, 92, 565, 108]
+      FontName		      "Arial"
+      FontSize		      11
+      VariableName	      "chou_shi_z2"
+      Buffer		      "4096"
+      Decimation	      "1"
+      SampleTime	      "0.001"
+    }
+    Block {
+      BlockType		      ToWorkspace
+      Name		      "»·¾³±äÁ¿3"
+      Position		      [515, 127, 565, 143]
+      FontName		      "Arial"
+      FontSize		      11
+      VariableName	      "chou_shi_z3"
+      Buffer		      "4096"
+      Decimation	      "1"
+      SampleTime	      "0.001"
+    }
+    Block {
+      BlockType		      ToWorkspace
+      Name		      "»·¾³±äÁ¿4"
+      Position		      [515, 162, 565, 178]
+      FontName		      "Arial"
+      FontSize		      11
+      VariableName	      "chou_shi_z4"
+      Buffer		      "4096"
+      Decimation	      "1"
+      SampleTime	      "0.001"
+    }
+    Block {
+      BlockType		      ToWorkspace
+      Name		      "Ê±¼ä±äÁ¿\n"
+      Position		      [490, 347, 540, 363]
+      FontName		      "Arial"
+      FontSize		      11
+      VariableName	      "chou_shi_t"
+      Buffer		      "4096"
+      Decimation	      "1"
+      SampleTime	      "0.001"
+    }
+    Block {
+      BlockType		      Clock
+      Name		      "Ê±ÖÓ\n"
+      Position		      [365, 343, 385, 367]
+      FontName		      "Arial"
+      FontSize		      11
+      Location		      [30, 40, 140, 75]
+    }
+    Block {
+      BlockType		      Scope
+      Name		      "Ê¾²¨Æ÷\n£¨³éÑùºóÐÅºÅ£©"
+      Ports		      [1, 0, 0, 0, 0]
+      Position		      [425, 277, 455, 313]
+      FontName		      "Arial"
+      FontSize		      11
+      Floating		      off
+      Location		      [465, 49, 795, 252]
+      Open		      on
+      Grid		      on
+      TickLabels	      on
+      ZoomMode		      on
+      TimeRange		      "3.000000"
+      YMin		      "-14"
+      YMax		      "14"
+      SaveToWorkspace	      off
+      SaveName		      "ScopeData"
+      LimitMaxRows	      on
+      MaxRows		      "5000"
+      Decimation	      "1"
+      SampleInput	      off
+      SampleTime	      "0"
+    }
+    Block {
+      BlockType		      Scope
+      Name		      "Ê¾²¨Æ÷\n£¨³éÑùÂö³åÐÅºÅ£©"
+      Ports		      [1, 0, 0, 0, 0]
+      Position		      [190, 286, 220, 324]
+      FontName		      "Arial"
+      FontSize		      11
+      Floating		      off
+      Location		      [6, 385, 341, 594]
+      Open		      on
+      Grid		      on
+      TickLabels	      on
+      ZoomMode		      on
+      TimeRange		      "1.000000"
+      YMin		      "-8"
+      YMax		      "8"
+      SaveToWorkspace	      off
+      SaveName		      "ScopeData"
+      LimitMaxRows	      on
+      MaxRows		      "5000"
+      Decimation	      "1"
+      SampleInput	      off
+      SampleTime	      "0"
+    }
+    Block {
+      BlockType		      Scope
+      Name		      "Ê¾²¨Æ÷\n£¨»Ö¸´ÐÅºÅ£©"
+      Ports		      [1, 0, 0, 0, 0]
+      Position		      [525, 197, 555, 233]
+      FontName		      "Arial"
+      FontSize		      11
+      Floating		      off
+      Location		      [463, 394, 795, 591]
+      Open		      on
+      Grid		      on
+      TickLabels	      on
+      ZoomMode		      on
+      TimeRange		      "3.000000"
+      YMin		      "-1"
+      YMax		      "1"
+      SaveToWorkspace	      off
+      SaveName		      "ScopeData"
+      LimitMaxRows	      on
+      MaxRows		      "5000"
+      Decimation	      "1"
+      SampleInput	      off
+      SampleTime	      "0"
+    }
+    Block {
+      BlockType		      Scope
+      Name		      "Ê¾²¨Æ÷\n£¨ÂË²¨ºóÐÅºÅ£©\n"
+      Ports		      [1, 0, 0, 0, 0]
+      Position		      [310, 122, 340, 158]
+      FontName		      "Arial"
+      FontSize		      11
+      Floating		      off
+      Location		      [416, 222, 749, 434]
+      Open		      on
+      Grid		      on
+      TickLabels	      on
+      ZoomMode		      on
+      TimeRange		      "3.000000"
+      YMin		      "-4"
+      YMax		      "4"
+      SaveToWorkspace	      off
+      SaveName		      "ScopeData"
+      LimitMaxRows	      on
+      MaxRows		      "5000"
+      Decimation	      "1"
+      SampleInput	      off
+      SampleTime	      "0"
+    }
+    Block {
+      BlockType		      Scope
+      Name		      "Ê¾²¨Æ÷\n£¨ÊäÈëÐÅºÅ£©"
+      Ports		      [1, 0, 0, 0, 0]
+      Position		      [190, 207, 220, 243]
+      FontName		      "Arial"
+      FontSize		      11
+      Floating		      off
+      Location		      [6, 210, 334, 387]
+      Open		      on
+      Grid		      on
+      TickLabels	      on
+      ZoomMode		      on
+      TimeRange		      "3.000000"
+      YMin		      "-4.000000"
+      YMax		      "4.000000"
+      SaveToWorkspace	      off
+      SaveName		      "ScopeData"
+      LimitMaxRows	      on
+      MaxRows		      "5000"
+      Decimation	      "1"
+      SampleInput	      off
+      SampleTime	      "0"
+    }
+    Block {
+      BlockType		      SignalGenerator
+      Name		      "ÐÅºÅÔ´\n£¨ÊäÈëÐÅºÅ£©\n\n"
+      Position		      [55, 121, 100, 159]
+      FontName		      "Arial"
+      FontSize		      11
+      WaveForm		      sine
+      Amplitude		      "2.000000"
+      Frequency		      "6.000000"
+      Units		      "rad/sec"
+    }
+    Line {
+      SrcBlock		      "³Ë·¨Æ÷"
+      SrcPort		      1
+      Points		      [30, 0]
+      Branch {
+	DstBlock		"°ÍÌØÎÖË¹\nµÍÍ¨ÂË²¨Æ÷2"
+	DstPort			1
+      }
+      Branch {
+	Points			[0, 80]
+	DstBlock		"Ê¾²¨Æ÷\n£¨³éÑùºóÐÅºÅ£©"
+	DstPort			1
+      }
+      Branch {
+	Points			[0, -80]
+	DstBlock		"»·¾³±äÁ¿3"
+	DstPort			1
+      }
+    }
+    Line {
+      SrcBlock		      "³éÑùÂö³å\n£¨³éÑùº¯Êý£©"
+      SrcPort		      1
+      Points		      [35, 0]
+      Branch {
+	Points			[135, 0; 0, -55]
+	DstBlock		"³Ë·¨Æ÷"
+	DstPort			2
+      }
+      Branch {
+	Points			[0, 30]
+	DstBlock		"Ê¾²¨Æ÷\n£¨³éÑùÂö³åÐÅºÅ£©"
+	DstPort			1
+      }
+    }
+    Line {
+      SrcBlock		      "°ÍÌØÎÖË¹\nµÍÍ¨ÂË²¨Æ÷2"
+      SrcPort		      1
+      Points		      [20, 0]
+      Branch {
+	DstBlock		"Ê¾²¨Æ÷\n£¨»Ö¸´ÐÅºÅ£©"
+	DstPort			1
+      }
+      Branch {
+	Points			[0, -45]
+	DstBlock		"»·¾³±äÁ¿4"
+	DstPort			1
+      }
+    }
+    Line {
+      SrcBlock		      "Ê±ÖÓ\n"
+      SrcPort		      1
+      DstBlock		      "Ê±¼ä±äÁ¿\n"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "ÐÅºÅÔ´\n£¨ÊäÈëÐÅºÅ£©\n\n"
+      SrcPort		      1
+      Points		      [15, 0]
+      Branch {
+	Points			[0, 85]
+	DstBlock		"Ê¾²¨Æ÷\n£¨ÊäÈëÐÅºÅ£©"
+	DstPort			1
+      }
+      Branch {
+	Points			[0, -75]
+	DstBlock		"»·¾³±äÁ¿1"
+	DstPort			1
+      }
+      Branch {
+	DstBlock		"°ÍÌØÎÖË¹\nµÍÍ¨ÂË²¨Æ÷1"
+	DstPort			1
+      }
+    }
+    Line {
+      SrcBlock		      "°ÍÌØÎÖË¹\nµÍÍ¨ÂË²¨Æ÷1"
+      SrcPort		      1
+      Points		      [35, 0]
+      Branch {
+	Points			[0, 70]
+	DstBlock		"³Ë·¨Æ÷"
+	DstPort			1
+      }
+      Branch {
+	DstBlock		"Ê¾²¨Æ÷\n£¨ÂË²¨ºóÐÅºÅ£©\n"
+	DstPort			1
+      }
+      Branch {
+	Points			[0, -40]
+	DstBlock		"»·¾³±äÁ¿2"
+	DstPort			1
+      }
+    }
+    Annotation {
+      Position		      [317, 17]
+      VerticalAlignment	      top
+      ForegroundColor	      blue
+      Text		      "Á¬ÐøÊ±¼ä³éÑùÊµÑé"
+      FontName		      "¿¬Ìå_GB2312ùÊµÑéÅºÅ£©\n©"
+      FontSize		      16
+      FontWeight	      bold
+      FontAngle		      italic
+    }
+  }
+}

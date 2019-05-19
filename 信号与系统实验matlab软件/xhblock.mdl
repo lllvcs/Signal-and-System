@@ -1,0 +1,829 @@
+Model {
+  Name			  "xhblock"
+  Version		  3.00
+  SimParamPage		  "Solver"
+  SampleTimeColors	  off
+  InvariantConstants	  off
+  WideVectorLines	  off
+  ShowLineWidths	  off
+  ShowPortDataTypes	  off
+  StartTime		  "0.0"
+  StopTime		  "10.0"
+  SolverMode		  "SingleTasking"
+  Solver		  "ode45"
+  RelTol		  "1e-3"
+  AbsTol		  "1e-6"
+  Refine		  "1"
+  MaxStep		  "auto"
+  InitialStep		  "auto"
+  FixedStep		  "auto"
+  MaxOrder		  5
+  OutputOption		  "RefineOutputTimes"
+  OutputTimes		  "[]"
+  LoadExternalInput	  off
+  ExternalInput		  "[t, u]"
+  SaveTime		  on
+  TimeSaveName		  "tout"
+  SaveState		  off
+  StateSaveName		  "xout"
+  SaveOutput		  on
+  OutputSaveName	  "yout"
+  LoadInitialState	  off
+  InitialState		  "xInitial"
+  SaveFinalState	  off
+  FinalStateName	  "xFinal"
+  SaveFormat		  "Matrix"
+  LimitMaxRows		  off
+  MaxRows		  "1000"
+  Decimation		  "1"
+  AlgebraicLoopMsg	  "warning"
+  MinStepSizeMsg	  "warning"
+  UnconnectedInputMsg	  "warning"
+  UnconnectedOutputMsg	  "warning"
+  UnconnectedLineMsg	  "warning"
+  InheritedTsInSrcMsg	  "warning"
+  IntegerOverflowMsg	  "warning"
+  UnnecessaryDatatypeConvMsg "none"
+  Int32ToFloatConvMsg	  "warning"
+  SignalLabelMismatchMsg  "none"
+  ConsistencyChecking	  "off"
+  ZeroCross		  on
+  SimulationMode	  "normal"
+  BlockDataTips		  on
+  BlockParametersDataTip  on
+  BlockAttributesDataTip  off
+  BlockPortWidthsDataTip  off
+  BlockDescriptionStringDataTip	off
+  BlockMaskParametersDataTip off
+  ToolBar		  on
+  StatusBar		  on
+  BrowserShowLibraryLinks off
+  BrowserLookUnderMasks	  off
+  OptimizeBlockIOStorage  on
+  BufferReuse		  on
+  BooleanDataType	  off
+  RTWSystemTargetFile	  "grt.tlc"
+  RTWInlineParameters	  off
+  RTWRetainRTWFile	  off
+  RTWTemplateMakefile	  "grt_default_tmf"
+  RTWMakeCommand	  "make_rtw"
+  RTWGenerateCodeOnly	  off
+  ExtModeMexFile	  "ext_comm"
+  ExtModeBatchMode	  off
+  ExtModeTrigType	  "manual"
+  ExtModeTrigMode	  "oneshot"
+  ExtModeTrigPort	  "1"
+  ExtModeTrigElement	  "any"
+  ExtModeTrigDuration	  1000
+  ExtModeTrigHoldOff	  0
+  ExtModeTrigDelay	  0
+  ExtModeTrigDirection	  "rising"
+  ExtModeTrigLevel	  0
+  ExtModeArchiveMode	  "off"
+  ExtModeAutoIncOneShot	  off
+  ExtModeIncDirWhenArm	  off
+  ExtModeAddSuffixToVar	  off
+  ExtModeWriteAllDataToWs off
+  ExtModeArmWhenConnect	  off
+  Created		  "Thu Mar 30 16:48:35 2000"
+  UpdateHistory		  "UpdateHistoryNever"
+  ModifiedByFormat	  "%<Auto>"
+  ModifiedDateFormat	  "%<Auto>"
+  LastModifiedDate	  "Fri Mar 31 10:22:39 2000"
+  ModelVersionFormat	  "1.%<AutoIncrement:3>"
+  ConfigurationManager	  "none"
+  BlockDefaults {
+    Orientation		    "right"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    NamePlacement	    "normal"
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+    ShowName		    on
+  }
+  AnnotationDefaults {
+    HorizontalAlignment	    "center"
+    VerticalAlignment	    "middle"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+  }
+  LineDefaults {
+    FontName		    "Helvetica"
+    FontSize		    9
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+  }
+  System {
+    Name		    "xhblock"
+    Location		    [108, 76, 745, 498]
+    Open		    on
+    ModelBrowserVisibility  off
+    ModelBrowserWidth	    200
+    ScreenColor		    "white"
+    PaperOrientation	    "landscape"
+    PaperPositionMode	    "auto"
+    PaperType		    "usletter"
+    PaperUnits		    "inches"
+    ZoomFactor		    "100"
+    AutoZoom		    on
+    ReportName		    "simulink-default.rpt"
+    Block {
+      BlockType		      Product
+      Name		      "³Ë·¨Æ÷"
+      Ports		      [2, 1, 0, 0, 0]
+      Position		      [105, 159, 140, 201]
+      FontName		      "ËÎÌå, 159, 1"
+      FontSize		      12
+      Inputs		      "2"
+      SaturateOnIntegerOverflow	on
+    }
+    Block {
+      BlockType		      TransferFcn
+      Name		      "µ¥Ôª1"
+      Position		      [100, 249, 165, 291]
+      DropShadow	      on
+      FontName		      "ËÎÌå, 249, 1"
+      FontSize		      12
+      Numerator		      "[1]"
+      Denominator	      "[R*C 1]"
+      MaskType		      "»ý·Ö 1],, 2065, 291]"
+      MaskDescription	      "»ý·Ö 1],, 2065, 291]"
+      MaskPromptString	      "µçÈÝÁ¿£¨·¨£©£º|µç×èÖµ£¨Å·Ä·£©£º0],[0,0],[-50,50"
+"],[-40,0],[-30"
+      MaskStyleString	      "edit,edit"
+      MaskTunableValueString  "on,on"
+      MaskCallbackString      "|"
+      MaskEnableString	      "on,on"
+      MaskVisibilityString    "on,on"
+      MaskInitialization      "C=@1;R=@2;"
+      MaskDisplay	      "plot([0 2 2 2],[2 2 1.5 2.5],[2 6],[2.5 2.5],[2"
+" 6],[1.5 1.5],[6 6],[2.5 1.5],[6 11],[2 2],[8 8 6 10],[2 0 0 0],[6 10],[-1 -1"
+"],[8 8 7 9],[-1 -3 -3 -3]);"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "1|1"
+    }
+    Block {
+      BlockType		      TransferFcn
+      Name		      "µ¥Ôª2"
+      Position		      [230, 248, 295, 292]
+      DropShadow	      on
+      FontName		      "ËÎÌå, 248, 2"
+      FontSize		      12
+      Numerator		      "[R*C 0]"
+      Denominator	      "[R*C 1]"
+      MaskType		      "Î¢·Ö 1]3, 1995, 292]"
+      MaskDescription	      "Î¢·Ö 1]3, 1995, 292]"
+      MaskPromptString	      "µçÈÝÁ¿£¨·¨£©£º|µç×èÖµ£¨Å·Ä·£©£º 6],[2.5 2.5],[2"
+" 6],[1.5 1.5],[6 6],[2.5 1.5],[6 11],[2 2],[8 8 6 10],[2 0 0 0],[6 10],[-1 -1"
+"],[8 8 7 9],[-1 -3 -3 -3]);"
+      MaskStyleString	      "edit,edit"
+      MaskTunableValueString  "on,on"
+      MaskCallbackString      "|"
+      MaskEnableString	      "on,on"
+      MaskVisibilityString    "on,on"
+      MaskInitialization      "C=@1;R=@2;"
+      MaskDisplay	      "plot([0 2 2 2],[2 2 0 4],[3 3 3 8],[0 4 2 2],[6"
+" 6 5.5 6.5],[2 0 0 0],[5.5 5.5],[0 -4],[6.5 6.5],[0 -4],[5.5 6.5 6 6],[-4 -4 "
+"-4 -5.5],[5.5 6.5],[-5.5 -5.5]);"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "1|1"
+    }
+    Block {
+      BlockType		      TransferFcn
+      Name		      "µ¥Ôª3"
+      Position		      [370, 245, 490, 295]
+      DropShadow	      on
+      FontName		      "ËÎÌå, 245, 4"
+      FontSize		      12
+      Numerator		      "[1]"
+      Denominator	      "[L*C R*C 1]"
+      MaskType		      " µ¥Ôª7*C 1]65,, 295]0 "
+      MaskDescription	      " µ¥Ôª7*C 1]65,, 295]0 "
+      MaskPromptString	      "µç×èÖµ£¨Å·£©£º|µç¸ÐÖµ£¨ºà£©£º|µçÈÝÖµ£¨·¨£©£º],["
+"-1 -1],[8 8 7 9],[-1 -4 -4 -4],[12.5 12 2],[8 8 6 10],[2 0 0 0],[6 10],[-1 -1"
+"],[85.5],[5.5 6.5],[-5.5 -5.5]);"
+      MaskStyleString	      "edit,edit,edit"
+      MaskTunableValueString  "on,on,on"
+      MaskCallbackString      "||"
+      MaskEnableString	      "on,on,on"
+      MaskVisibilityString    "on,on,on"
+      MaskInitialization      "R=@1;L=@2;C=@3;"
+      MaskDisplay	      "plot([3 5 5 5],[2 2 1.5 2.5],[5 9],[2.5 2.5],[5"
+" 9],[1.5 1.5],[9 9],[2.5 1.5],[9 11],[2 2],[11:1/7:12],[2 2.5 2.707 2.866 2.8"
+"66 2.707 2.5 2],[12:1/7:13],[2 2.5 2.707 2.866 2.866 2.707 2.5 2],[13:1/7:14]"
+",[2 2.5 2.707 2.866 2.866 2.707 2.5 2],[14:1/7:15],[2 2.5 2.707 2.866 2.866 2"
+".707 2.5 2],[15 21],[2 2],[18 18 16 20],[2 0 0 0],[16 20],[-1 -1],[18 18 17 1"
+"9],[-1 -3 -3 -3]);"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "1|1|1"
+    }
+    Block {
+      BlockType		      TransferFcn
+      Name		      "µ¥Ôª4"
+      Position		      [235, 339, 405, 391]
+      DropShadow	      on
+      FontName		      "ËÎÌå, 339, 4"
+      FontSize		      12
+      Numerator		      "[1]"
+      Denominator	      "[L*C1*C2*R L*C2 R*(C1+C2) 1]"
+      MaskType		      "µ¥Ôª5*C2*R L*C2 R*(C1"
+      MaskDescription	      "µ¥Ôª5*C2*R L*C2 R*(C1"
+      MaskPromptString	      "µç×èR£¨Å·£©£º|µçÈÝC1£¨·¨£©£º|µç¸ÐL£¨ºà£©£º|µçÈÝ"
+"C2£¨·¨£©£º 1.5 1],[2:1/7:3],[1 1.5 1.707 1.866 1.866 1.707 1.5 1],[3:1/7:4],["
+"1 1.5 1.707 1.866 1.866 1.7072 2.5 2.707 2.866 2.866 2.707 2.5 2],[13:1/7:14]"
+",[2 2.5 2.707 2.866 2.866 2.707 2.5 2],[14:1/7:1"
+      MaskStyleString	      "edit,edit,edit,edit"
+      MaskTunableValueString  "on,on,on,on"
+      MaskCallbackString      "|||"
+      MaskEnableString	      "on,on,on,on"
+      MaskVisibilityString    "on,on,on,on"
+      MaskInitialization      "R=@1;C1=@2;L=@3;C2=@4;"
+      MaskDisplay	      "plot([0 2 2 2],[2 2 1.5 2.5],[2 6],[2.5 2.5],[2"
+" 6],[1.5 1.5],[6 6],[2.5 1.5],[6 11],[2 2],[8 8 6 10],[2 0 0 0],[6 10],[-1 -1"
+"],[8 8 7 9],[-1 -3 -3 -3],[11:1/7:12],[2 2.5 2.707 2.866 2.866 2.707 2.5 2],["
+"12:1/7:13],[2 2.5 2.707 2.866 2.866 2.707 2.5 2],[13:1/7:14],[2 2.5 2.707 2.8"
+"66 2.866 2.707 2.5 2],[14:1/7:15],[2 2.5 2.707 2.866 2.866 2.707 2.5 2],[15 2"
+"1],[2 2],[18 18 16 20],[2 0 0 0],[16 20],[-1 -1],[18 18 17 19],[-1 -3 -3 -3])"
+";disp('R     C1     L      C2')"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "1|1|1|1"
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "·½²¨ÐÅºÅ"
+      Ports		      [0, 1, 0, 0, 0]
+      Position		      [305, 89, 345, 131]
+      FontName		      "ËÎÌå, 89, 34"
+      FontSize		      12
+      ShowPortLabels	      off
+      MaskType		      "Pulse Generator"
+      MaskDescription	      "Pulse Generator."
+      MaskHelp		      "Pulse generator which ensures pulse\\ntransitio"
+"ns are hit. Provides a vector of pulses when the height is entered as a vecto"
+"r.\\nUnmask to see how it works."
+      MaskPromptString	      "Pulse period (secs):|Pulse width:|Pulse height:"
+"|Pulse start time:"
+      MaskStyleString	      "edit,edit,edit,edit"
+      MaskTunableValueString  "on,on,on,on"
+      MaskCallbackString      "|||"
+      MaskEnableString	      "on,on,on,on"
+      MaskVisibilityString    "on,on,on,on"
+      MaskInitialization      "Ts=@1; du=@2; ht=@3; stt=@4; ini=ones(length(ht"
+"),1); st1=rem(stt,Ts); st2=rem(stt+du,Ts);if(Ts<=1.2*du),ini=zeros(length(ht)"
+",1);end;"
+      MaskDisplay	      "plot(0,0,100,100,[90,75,75,60,60,35,35,20,20,10"
+"],[20,20,80,80,20,20,80,80,20,20])"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "20|20|1|1"
+      System {
+	Name			"·½²¨ÐÅºÅ"
+	Location		[158, 441, 759, 682]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+	AutoZoom		on
+	Block {
+	  BlockType		  Clock
+	  Name			  "Clock1"
+	  Position		  [295, 100, 315, 120]
+	  ShowName		  off
+	  DisplayTime		  off
+	  Decimation		  "10"
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "Constant"
+	  Position		  [25, 30, 45, 50]
+	  Value			  "1"
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "Constant1"
+	  Position		  [295, 149, 320, 171]
+	  Value			  "stt"
+	}
+	Block {
+	  BlockType		  Gain
+	  Name			  "Gain"
+	  Position		  [510, 102, 535, 128]
+	  ShowName		  off
+	  Gain			  "ht"
+	  SaturateOnIntegerOverflow on
+	}
+	Block {
+	  BlockType		  Logic
+	  Name			  "Logical\nOperator"
+	  Ports			  [2, 1, 0, 0, 0]
+	  Position		  [285, 38, 315, 62]
+	  Operator		  "XOR"
+	  Inputs		  "2"
+	}
+	Block {
+	  BlockType		  Logic
+	  Name			  "Logical\nOperator1"
+	  Ports			  [1, 1, 0, 0, 0]
+	  Position		  [355, 38, 385, 62]
+	  Operator		  "NOT"
+	  Inputs		  "1"
+	}
+	Block {
+	  BlockType		  Product
+	  Name			  "Product"
+	  Ports			  [2, 1, 0, 0, 0]
+	  Position		  [455, 105, 480, 125]
+	  ShowName		  off
+	  Inputs		  "2"
+	  SaturateOnIntegerOverflow on
+	}
+	Block {
+	  BlockType		  RelationalOperator
+	  Name			  "Relational\noperator"
+	  Position		  [370, 102, 400, 133]
+	  ShowName		  off
+	  Operator		  ">="
+	}
+	Block {
+	  BlockType		  Sum
+	  Name			  "Sum"
+	  Ports			  [2, 1, 0, 0, 0]
+	  Position		  [135, 35, 155, 55]
+	  ShowName		  off
+	  IconShape		  "rectangular"
+	  Inputs		  "+-"
+	  SaturateOnIntegerOverflow on
+	}
+	Block {
+	  BlockType		  Sum
+	  Name			  "Sum1"
+	  Ports			  [2, 1, 0, 0, 0]
+	  Position		  [130, 120, 150, 140]
+	  ShowName		  off
+	  IconShape		  "rectangular"
+	  Inputs		  "+-"
+	  SaturateOnIntegerOverflow on
+	}
+	Block {
+	  BlockType		  UnitDelay
+	  Name			  "Unit Delay"
+	  Position		  [145, 75, 195, 95]
+	  Orientation		  "left"
+	  X0			  "0"
+	  SampleTime		  "[Ts,st1]"
+	}
+	Block {
+	  BlockType		  UnitDelay
+	  Name			  "Unit Delay1"
+	  Position		  [140, 165, 190, 185]
+	  Orientation		  "left"
+	  X0			  "ini"
+	  SampleTime		  "[Ts,st2]"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "out_1"
+	  Position		  [560, 105, 580, 125]
+	  ShowName		  off
+	  Port			  "1"
+	  OutputWhenDisabled	  "held"
+	  InitialOutput		  "[]"
+	}
+	Line {
+	  SrcBlock		  "Logical\nOperator1"
+	  SrcPort		  1
+	  Points		  [40, 0; 0, 60]
+	  DstBlock		  "Product"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Logical\nOperator"
+	  SrcPort		  1
+	  DstBlock		  "Logical\nOperator1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Constant1"
+	  SrcPort		  1
+	  Points		  [20, 0; 0, -35]
+	  DstBlock		  "Relational\noperator"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Gain"
+	  SrcPort		  1
+	  DstBlock		  "out_1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Product"
+	  SrcPort		  1
+	  DstBlock		  "Gain"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Relational\noperator"
+	  SrcPort		  1
+	  DstBlock		  "Product"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Clock1"
+	  SrcPort		  1
+	  DstBlock		  "Relational\noperator"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Unit Delay"
+	  SrcPort		  1
+	  Points		  [-35, 0; 0, -35]
+	  DstBlock		  "Sum"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Sum"
+	  SrcPort		  1
+	  Points		  [0, 0]
+	  Branch {
+	    Points		    [70, 0; 0, 40]
+	    DstBlock		    "Unit Delay"
+	    DstPort		    1
+	  }
+	  Branch {
+	    DstBlock		    "Logical\nOperator"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "Constant"
+	  SrcPort		  1
+	  Points		  [0, 0]
+	  Branch {
+	    DstBlock		    "Sum"
+	    DstPort		    1
+	  }
+	  Branch {
+	    Points		    [20, 0; 0, 85]
+	    DstBlock		    "Sum1"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "Sum1"
+	  SrcPort		  1
+	  Points		  [0, 0]
+	  Branch {
+	    Points		    [55, 0; 0, 45]
+	    DstBlock		    "Unit Delay1"
+	    DstPort		    1
+	  }
+	  Branch {
+	    Points		    [90, 0; 0, -75]
+	    DstBlock		    "Logical\nOperator"
+	    DstPort		    2
+	  }
+	}
+	Line {
+	  SrcBlock		  "Unit Delay1"
+	  SrcPort		  1
+	  Points		  [-35, 0; 0, -40]
+	  DstBlock		  "Sum1"
+	  DstPort		  2
+	}
+      }
+    }
+    Block {
+      BlockType		      Gain
+      Name		      "·Å´óÆ÷"
+      Position		      [255, 163, 300, 197]
+      FontName		      "ËÎÌå, 163, 3"
+      FontSize		      12
+      Gain		      "1"
+      SaturateOnIntegerOverflow	on
+    }
+    Block {
+      BlockType		      Integrator
+      Name		      "»ý·ÖÆ÷"
+      Ports		      [1, 1, 0, 0, 0]
+      Position		      [405, 166, 440, 204]
+      FontName		      "ËÎÌå, 166, 4"
+      FontSize		      12
+      ExternalReset	      "none"
+      InitialConditionSource  "internal"
+      InitialCondition	      "0"
+      LimitOutput	      off
+      UpperSaturationLimit    "inf"
+      LowerSaturationLimit    "-inf"
+      ShowSaturationPort      off
+      ShowStatePort	      off
+      AbsoluteTolerance	      "auto"
+    }
+    Block {
+      BlockType		      Sum
+      Name		      "¼Ó·¨Æ÷"
+      Ports		      [2, 1, 0, 0, 0]
+      Position		      [180, 159, 220, 201]
+      FontName		      "ËÎÌå, 159, 2"
+      FontSize		      12
+      IconShape		      "rectangular"
+      Inputs		      "++"
+      SaturateOnIntegerOverflow	on
+    }
+    Block {
+      BlockType		      Step
+      Name		      "½×Ô¾ÊäÈë"
+      Position		      [240, 89, 275, 131]
+      FontName		      "ËÎÌå, 89, 27"
+      FontSize		      12
+      Time		      "1"
+      Before		      "0"
+      After		      "1"
+      SampleTime	      "-1"
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "ÆµÆ×·ÖÎöÒÇ"
+      Ports		      [1, 0, 0, 0, 0]
+      Position		      [475, 89, 505, 131]
+      DropShadow	      on
+      CopyFcn		      "ssfunpsd([],[],[],'CopyBlock')"
+      DeleteFcn		      "ssfunpsd([],[],[],'DeleteBlock')"
+      LoadFcn		      "ssfunpsd([],[],[],'LoadBlock')"
+      StartFcn		      "ssfunpsd([],[],[],'Start')"
+      NameChangeFcn	      "ssfunpsd([],[],[],'NameChange')"
+      FontName		      "ËÎÌånpsd([],"
+      FontSize		      12
+      ShowPortLabels	      off
+      MaskType		      "ÆµÆ×·ÖÎöÒÇ],[],[],'NameChange')),35,35,20,20,10"
+"],["
+      MaskDescription	      "ÆµÆ×·ÖÎöÒÇ£¨ÀûÓÃÍ¼ÐÎ´°¿ÚÏÔÊ¾ÊµÊ±½á¹û£©5 2.5],[5"
+" 9],[1.5 1.5],[9 9],[2.5 1.5],[9 11],[2 2],[11:1/7:12],[2 2.5 2.707length(ht)"
+",1);end;k to see how it works.1/7:12],[2 2.5 2.707 2.866 2.866 2.7"
+      MaskHelp		      "µ±°Ñ¸ÃÄ£¿éÁ¬½Óµ½Ò»¸öÏµÍ³µÄÊä³öÊ±£¬½«ÒÔÍ¼ÐÎ´°¿Ú"
+"µ"\n"
+      MaskPromptString	      "»º³åÇø³¤¶È£º|½øÐÐ FFT ÔËËãµÄµãÊý£º|ÔÚ¶àÉÙµãºó»­"
+"Í¼£º|²ÉÑùÖÜÆÚ£ºµÄÆµÆ×Í¼¡£1.5],[9 11],[2 2],[11:1/7:12],[2 2.5 2.707 2.866 2.8"
+"66 2.707 2.5 2],[12:1/7:13],[2 2.5 2.707 2.866 2.866 2.7 2.866 2.707 2.5 2],["
+"12:1/7:13],[2 2.5 2.707 2.866 2.866 2.707 2.5 2],[13:1/7:14],[2 2.5 2.707 2.8"
+"66 2.866 2.707 2.5 2],[14:1/7:"
+      MaskStyleString	      "edit,edit,edit,edit"
+      MaskTunableValueString  "on,on,on,on"
+      MaskCallbackString      "|||"
+      MaskEnableString	      "on,on,on,on"
+      MaskVisibilityString    "on,on,on,on"
+      MaskInitialization      "npts=@1; fftpts=@2; HowOften=@3; ts=@4(1); if l"
+"ength(@4) > 1, offset = @4(2), else, offset = 0; end"
+      MaskDisplay	      "plot(0,0,100,100,[14,91,91,14,14],[86,86,40,40,"
+"86],[85,82,80,79,75,67,63,60,57,53,41,36,33,27,24],[49,50,53,50,49,51,54,66,5"
+"4,50,50,52,81,51,49])"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "1024|1024|64|0.01"
+      System {
+	Name			"ÆµÆ×·ÖÎöÒÇ"
+	Location		[134, 208, 394, 358]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+	AutoZoom		on
+	Block {
+	  BlockType		  Inport
+	  Name			  "in_1"
+	  Position		  [30, 65, 50, 85]
+	  Port			  "1"
+	  PortWidth		  "-1"
+	  SampleTime		  "-1"
+	  DataType		  "auto"
+	  SignalType		  "auto"
+	  Interpolate		  on
+	}
+	Block {
+	  BlockType		  "S-Function"
+	  Name			  "S-function block \nwhich calls M-file"
+	  Ports			  [1, 1, 0, 0, 0]
+	  Position		  [140, 56, 190, 94]
+	  FunctionName		  "ssfunpsd"
+	  Parameters		  "fftpts,npts,HowOften,offset,ts,0"
+	  PortCounts		  "[]"
+	  SFunctionModules	  "''"
+	}
+	Line {
+	  SrcBlock		  "in_1"
+	  SrcPort		  1
+	  DstBlock		  "S-function block \nwhich calls M-file"
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "ÆµÆ×·ÖÎöÒÇ1\n"
+      Ports		      [2, 0, 0, 0, 0]
+      Position		      [385, 88, 420, 132]
+      DropShadow	      on
+      FontName		      "ËÎÌå, 88, 42"
+      FontSize		      12
+      ShowPortLabels	      off
+      MaskType		      "Spectrum analyzer."
+      MaskDescription	      "Spectrum analyser using graph window.\nHook inp"
+"ut 1 to system input.\nHook input 2 to system output."
+      MaskHelp		      "Hook the system's input to the first port of th"
+"is block and the system's output to second port. Results are displayed as the"
+" frequency response of this system. Use signals with high harmonic content fo"
+"r best results. "
+      MaskPromptString	      "Length of buffer:|Number of points for fft:|Plo"
+"t after how many points:|Sample time:"
+      MaskStyleString	      "edit,edit,edit,edit"
+      MaskTunableValueString  "on,on,on,on"
+      MaskCallbackString      "|||"
+      MaskEnableString	      "on,on,on,on"
+      MaskVisibilityString    "on,on,on,on"
+      MaskInitialization      "npts=@1; fftpts=@2; HowOften=@3; ts=@4(1); if l"
+"ength(@4) > 1, offset = @4(2), else, offset = 0; end"
+      MaskDisplay	      "plot(0,0,100,100,[11,93,93,11,11],[90,90,40,40,"
+"90],[90,80,72,64,55,45,41,36,20],[50,50,52,59,67,75,78,80,80])"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "512|1024|100|0.05"
+      System {
+	Name			"ÆµÆ×·ÖÎöÒÇ1\n"
+	Location		[0, 0, 371, 185]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+	AutoZoom		on
+	Block {
+	  BlockType		  Inport
+	  Name			  "system input"
+	  Position		  [55, 30, 75, 50]
+	  Port			  "1"
+	  PortWidth		  "-1"
+	  SampleTime		  "-1"
+	  DataType		  "auto"
+	  SignalType		  "auto"
+	  Interpolate		  on
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "system output"
+	  Position		  [55, 110, 75, 130]
+	  Port			  "2"
+	  PortWidth		  "-1"
+	  SampleTime		  "-1"
+	  DataType		  "auto"
+	  SignalType		  "auto"
+	  Interpolate		  on
+	}
+	Block {
+	  BlockType		  Mux
+	  Name			  "Mux"
+	  Ports			  [2, 1, 0, 0, 0]
+	  Position		  [145, 71, 175, 104]
+	  Inputs		  "2"
+	  DisplayOption		  "none"
+	}
+	Block {
+	  BlockType		  "S-Function"
+	  Name			  "S-function block\nwhich calls M-file"
+	  Ports			  [1, 0, 0, 0, 0]
+	  Position		  [250, 72, 295, 108]
+	  FunctionName		  "sfuntf"
+	  Parameters		  "fftpts,npts,HowOften,offset,ts,0"
+	  PortCounts		  "[]"
+	  SFunctionModules	  "''"
+	}
+	Line {
+	  SrcBlock		  "system output"
+	  SrcPort		  1
+	  Points		  [30, 0; 0, -25]
+	  DstBlock		  "Mux"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "system input"
+	  SrcPort		  1
+	  Points		  [30, 0; 0, 40]
+	  DstBlock		  "Mux"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Mux"
+	  SrcPort		  1
+	  DstBlock		  "S-function block\nwhich calls M-file"
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      Scope
+      Name		      "Ê¾²¨Æ÷"
+      Ports		      [1, 0, 0, 0, 0]
+      Position		      [480, 158, 515, 202]
+      FontName		      "ËÎÌå, 158, 5"
+      FontSize		      12
+      Floating		      off
+      Location		      [100, 100, 380, 320]
+      Open		      off
+      NumInputPorts	      "1"
+      TickLabels	      "on"
+      ZoomMode		      "on"
+      List {
+	ListType		AxesTitles
+	axes1			"%<SignalLabel>"
+      }
+      Grid		      "on"
+      TimeRange		      "1.000000"
+      YMin		      "-1.000000"
+      YMax		      "1.000000"
+      SaveToWorkspace	      off
+      SaveName		      "ScopeData"
+      DataFormat	      "Matrix"
+      LimitMaxRows	      on
+      MaxRows		      "5000"
+      Decimation	      "1"
+      SampleInput	      off
+      SampleTime	      "0"
+    }
+    Block {
+      BlockType		      Derivative
+      Name		      "Î¢·Ö"
+      Position		      [335, 165, 370, 205]
+      FontName		      "ËÎÌå, 165, 3"
+      FontSize		      12
+    }
+    Block {
+      BlockType		      SignalGenerator
+      Name		      "ÐÅºÅ·¢ÉúÆ÷"
+      Position		      [95, 93, 140, 127]
+      FontName		      "ËÎÌå 93, 140"
+      FontSize		      12
+      WaveForm		      "sine"
+      Amplitude		      "1.000000"
+      Frequency		      "1.000000"
+      Units		      "rad/sec"
+    }
+    Block {
+      BlockType		      Sin
+      Name		      "ÕýÏÒ²¨"
+      Position		      [175, 92, 210, 128]
+      FontName		      "ËÎÌå, 92, 21"
+      FontSize		      12
+      Amplitude		      "1"
+      Frequency		      "1"
+      Phase		      "0"
+      SampleTime	      "-1"
+    }
+    Annotation {
+      Position		      [95, 56]
+      ForegroundColor	      "blue"
+      Text		      "³£ÓÃÄ£¿é£º"
+      FontName		      "ËÎÌå"
+      FontSize		      16
+      FontWeight	      "bold"
+      FontAngle		      "italic"
+    }
+  }
+}
